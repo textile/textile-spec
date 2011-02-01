@@ -1,0 +1,91 @@
+- HTML spans: 
+  - HTML spans: 
+      desc: <p>You can enclose a bit of text in an <span class="caps">HTML</span> span tag by enclosing it in percent signs.  Then you can apply attributes to the span (see <a href="/textile/attributes">attributes</a>).</p>
+      input: I can put in a %(myclass)span with a class% like this.
+- Inline code: 
+  - Inline code: 
+      desc: <p>To mark code in your text, surround the code with at signs.</p>
+      input: On the command line, you can just type @redcloth@.
+- Block code: 
+  - Block code: 
+      desc: <p>You can insert a block of code with the <code>bc.</code> block signature.</p>
+      input: |-
+        bc. # Output "I love Ruby"
+        say = "I love Ruby"
+        puts say
+  - Extended block code: 
+      desc: <p>Use <code>bc..</code> and the block of code will continue to include blank lines until it encounters another block signature such as <code>p.</code></p>
+      input: |-
+        bc.. # Output "I love Ruby"
+        say = "I love Ruby"
+        puts say
+        
+        # Output "I *LOVE* RUBY"
+        say['love'] = "*love*"
+        puts say.upcase
+        
+        p. And that is how you do it.
+- Inline HTML: 
+  - Inline HTML: 
+      desc: <p>You can use <span class="caps">HTML</span> right in your paragraph text, presuming the site administrator has not set :filter_html or :sanitize_html restrictions.</p>
+      input: I can use HTML directly in my <span class="youbetcha">Textile</span>.
+- Block HTML: 
+  - Block HTML: 
+      desc: <p>You can use <span class="caps">HTML</span> freely within your RedCloth 4 Textile.  <span class="caps">HTML</span> tags on a line by themselves will not be mangled.  Don&#8217;t forget to leave a blank line after any Textile, just like usual.</p>
+      input: |-
+        <div id="shopping-cart">
+        <form action="form_action" method="get">
+        h3. Your cart
+        
+        * Item one
+        * Item two
+        
+        <p><input type="submit" value="Check Out" /></p>
+        
+        </form>
+        </div>
+- No Textile: 
+  - No Textile: 
+      desc: <p>You can have RedCloth skip a chunk of text with the <code>&lt;notextile&gt;</code> tag or double-equals.</p>
+      input: |-
+        <notextile>
+        Don't touch this!
+        </notextile>
+        
+        Use ==*asterisks*== to say something *strongly*.
+  - Notextile block: 
+      desc: <p>Notextile can also be used as a normal or extended Textile block.</p>
+      input: |-
+        notextile. This has *no* textile formatting, see?
+        
+        notextile.. And this notextile block
+        
+        Just keeps going and going.
+        
+        p. Until you end it with another block.
+- Preformatted text: 
+  - Preformatted text: 
+      desc: <p>Preformatted text can be put in a <code>pre.</code> block and its whitespace will be preserved.  <code>pre.</code> is almost identical to <code>bc.</code>, except that <code>&lt;code&gt;...&lt;/code&gt;</code> tags are not used within the <code>&lt;pre&gt;</code> block.</p>
+      input: |-
+        pre.      Text in a pre block
+        is displayed in a fixed-width
+             font. It preserves
+          s p a c e s, line breaks
+             and ascii bunnies.
+                   _     _   
+                   ` /`/   
+                     V /    
+                    /. .    
+                   = T /=   
+                    / ^     
+                 {}/\ //   
+                 __ " " /__ 
+                (____/^____)
+  - Extended preformatted: 
+      desc: <p>Use <code>pre..</code> to make a block of extended preformatted text that continues until it encounters another block signature, like <code>p.</code></p>
+      input: |-
+        pre.. All monospaced
+        
+        Even the blank lines
+        
+        p. But now a paragraph

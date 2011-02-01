@@ -1,0 +1,67 @@
+- Strong importance: 
+  - Strong importance: 
+      desc: <p>Strong importance can be given to the text by surrounding it with asterisks.  The strong text is commonly styled as <b>bold</b>.</p>
+      input: Don't *ever* pull this lever.
+- Stress emphasis: 
+  - Stress emphasis: 
+      desc: <p>To add emphasis to a stressed word or phrase, surround it with underscores.  Emphasized text is typically styled as <i>italics</i>.</p>
+      input: You didn't actually _believe_ her, did you?
+- Stylistic offset: 
+  - Stylistic offset: 
+      desc: <p>To stylistically differentiate a word or phrase from the surrounding text <strong>without conveying any extra importance</strong>, place two asterisks on either side.  Uses are key words in a document abstract, product names in a review, or other spans of text whose typical typographic presentation is boldened.</p>
+      input: |-
+        Search results for **Textile**:
+        
+        h4. ["**Textile** (markup language) - Wikipedia":http://en.wikipedia.org/wiki/Textile_(markup_language)]
+        
+        **Textile** is a lightweight markup language originally developed by Dean Allen and billed as a "humane Web text generator".  **Textile** converts its marked-up text ...
+- Alternate voice: 
+  - Alternate voice: 
+      desc: <p>Double underscores surround a span of text in an alternate mood or voice, a technical term, an idiomatic phrase from another language, a thought, a ship name, or some other prose whose typical typographic presentation is italicized.</p>
+      input: "I just got the weirdest feeling of __d\xC3\xA9j\xC3\xA0 vu__."
+- Citation: 
+  - Citation: 
+      desc: <p>Cite the title of a work (e.g. a book, paper, essay, poem, score, song, script, film, TV show, game, sculpture, painting, theater production, play, opera, musical, exhibition, or anything other work whose title is italicized in traditional style guides) by surrounding it with two question marks on either side. This can be a work that is being quoted or referenced in detail (i.e. a citation), or it can just be a work that is mentioned in passing.</p>
+      input: My wife's favorite book is ??The Count of Monte Cristo?? by Dumas.
+- Insertions and deletions: 
+  - Insertions and deletions: 
+      desc: <p>To indicate a passage which has been deleted, surround it with minuses.  To indicate an insertion, use pluses.</p>
+      input: The news networks declared -Al Gore- +George W. Bush+ the winner in Florida.
+  - Explicit insertion and deletion: 
+      desc: <p>If your insertion or deletion isn&#8217;t being recognized or is being confused with another modifier, you can make it more explicit by surrounding it with square brackets.</p>
+      input: "[-this was deleted-][+this was added+] to the paragraph"
+- Superscript and subscript: 
+  - Superscript and subscript: 
+      desc: <p>Superscript and subscript phrases are surrounded with caret and tilde characters, respectively.</p>
+      input: |
+        f(x, n) = log ~4~ x ^n^
+
+  - Tight superscript and subscript: 
+      desc: <p>If you want it without spaces around the super- and subscripted text, use square brackets.</p>
+      input: f(x, n) = log[~4~]x[^n^]
+- Links: 
+  - Links: 
+      desc: <p>Links have the text of the link in quotes, followed by a colon and the <span class="caps">URL</span>.</p>
+      input: Learn more "about the company":/about and our "board of directors":../about#board.
+  - Link title: 
+      desc: <p>A title may be placed in parentheses at the end of the link text.  Link titles help users predict where they are going.  <a href="http://www.useit.com/alertbox/980111.html" title="Nielsen&#39;s guidelines for link titles">Jakob Nielsen</a> recommends you use them sparingly and not assume the user will see them at all.</p>
+      input: Visit our "parent company (Example Corporation)":http://example.com.
+  - Bracketed link: 
+      desc: <p>When the link isn&#8217;t surrounded by spaces or punctuation, or when the <span class="caps">URL</span> ending may be ambiguous, surround the link with square brackets.</p>
+      input: This is a link to a ["Wikipedia article about Textile":http://en.wikipedia.org/wiki/Textile_(markup_language)].
+  - Link alias: 
+      desc: <p>If you link to a <span class="caps">URL</span> repeatedly, you can replace the <span class="caps">URL</span> with a link alias defined elsewhere in the Textile document.</p>
+      input: |-
+        I'm really excited about "RedCloth":redcloth.  I love it so much, I think I'll name my first child "RedCloth":redcloth.
+        
+        [redcloth]http://redcloth.org
+  - Link attributes: 
+      desc: <p>Link <a href="../attributes">attributes</a> can be specified at the beginning of the link text followed by a period and space.</p>
+      input: "\"(my-class). This is a link with class\":http://redcloth.org"
+- Images: 
+  - Images: 
+      desc: <p>Include an image by surrounding its <span class="caps">URL</span> with exclamation marks.  Alt text can be provided in parentheses.</p>
+      input: "!http://www.w3.org/Icons/valid-html401(This page is valid HTML)!"
+  - Image links: 
+      desc: <p>Images can be linked by putting a colon and the link <span class="caps">URL</span> after the image.</p>
+      input: "!http://www.w3.org/Icons/valid-html401!:http://validator.w3.org/check?uri=referer"

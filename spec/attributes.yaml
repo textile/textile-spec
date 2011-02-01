@@ -1,0 +1,38 @@
+- CSS classes and IDs: 
+  - CSS classes and IDs: 
+      desc: <p>You can apply <span class="caps">CSS</span> classes and IDs to phrase modifiers or block modifiers.</p>
+      input: p(my-class). This is a paragraph that has a class and this *(#special-phrase)emphasized phrase* has an id.
+  - CSS IDs: 
+      desc: ""
+      input: p(#my-paragraph). This is a paragraph that has an id.
+  - CSS classes and IDs combined: 
+      desc: <p>You can specify both class and ID, but the class must always come first.</p>
+      input: div(myclass#myid). This div has both a CSS class and ID.
+- CSS styles: 
+  - CSS styles: 
+      desc: <p>Apply <span class="caps">CSS</span> styles directly to block or phrase modifiers by putting the style rules in curly braces.</p>
+      input: p{color:blue;letter-spacing:.5em}. Spacey blue
+- Language: 
+  - Language: 
+      desc: <p>Specify the language of text with square brackets.</p>
+      input: "p[fr]. Parlez-vous fran\xC3\xA7ais ?"
+- Alignment: 
+  - Alignment: 
+      desc: <p>Text inside blocks can be aligned in four ways:</p>
+      input: |-
+        p<. align left
+        
+        p>. align right
+        
+        p=. centered
+        
+        p<>. justified justified justified justified justified justified justified justified justified
+- Indentation: 
+  - Indentation: 
+      desc: <p>Text can be indented with single parentheses.  For each left paren, left pad 1em.  For each right paren, right pad 1em.  They may be combined for left and right padding.</p>
+      input: |-
+        p(. Left pad 1em.
+        
+        p)). Right pad 2em.
+        
+        p(). Pad both left and right sides 1em.

@@ -1,0 +1,7 @@
+<h1>Topics:</h1>
+
+<ul>
+<% @documents.each do |document| %>
+  <li><a href="/<%= document['file'].gsub('_','-') %>/"><%= document['title'] %></a></li>
+<% end %>
+</ul>
