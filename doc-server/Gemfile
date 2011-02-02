@@ -1,8 +1,13 @@
 source :rubygems
 
+gem "rake"
 gem "sinatra"
 # gem "haml"
+gem "dalli"
+gem "sinatra-sindalli"
 
-group :development do
-  gem 'sinatra-reloader'
+group :development, :test do
+  gem 'shotgun'
+  gem 'rack-test'
+  gem 'rspec'
 end

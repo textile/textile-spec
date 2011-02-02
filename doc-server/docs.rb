@@ -1,12 +1,12 @@
-error do
-	e = request.env['sinatra.error']
-	puts e.to_s
-	puts e.backtrace.join("\n")
-	"Application error"
-end
+# error do
+#   e = request.env['sinatra.error']
+#   puts e.to_s
+#   puts e.backtrace.join("\n")
+#   "Application error"
+# end
 
-# $LOAD_PATH.unshift(File.dirname(__FILE__) + '/lib')
-# require 'post'
+$LOAD_PATH.unshift(File.dirname(__FILE__) + '/lib')
+require 'textile/spec'
 
 helpers do
 	def admin?
@@ -20,17 +20,12 @@ end
 
 layout 'layout'
 # set :haml, :format => :html5
+require 'erb'
 
 ### Public
 
 get '/' do
-  @documents = YAML::load(File.open("#{settings.root}/../spec/index.yaml"))
-  @documents.map! {|h| h.values.first.merge('title' => h.keys.first) }
-  @documents.map! do |document|
-    document['examples'] = YAML::load(File.open("#{settings.root}/../spec/#{document['file']}.yaml"))
-    document
-  end
-  require 'erb'
+  @documents = Textile::Spec.all
   erb :index
 end
 
