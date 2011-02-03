@@ -7,14 +7,13 @@ $LOAD_PATH.unshift(File.dirname(__FILE__) + '/lib')
 require 'textile/spec'
 
 layout 'layout'
-# set :haml, :format => :html5
-require 'erb'
+set :haml, :format => :html5
 
 ### Public
 
 get '/' do
   @documents = Textile::Spec.all
-  erb :index
+  haml :index
 end
 
 # get '/past/:year/:month/:day/:slug/' do

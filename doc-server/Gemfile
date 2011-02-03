@@ -2,7 +2,7 @@ source :rubygems
 
 gem "rake"
 gem "sinatra"
-# gem "haml"
+gem "haml"
 gem "dalli"
 gem "sinatra-sindalli"
 

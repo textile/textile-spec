@@ -1,0 +1,5 @@
+%h1 Topics:
+%ul
+  - @documents.each do |document|
+    %li
+      %a{:href => "/#{document['file'].gsub('_','-')}/"}= document['title']
