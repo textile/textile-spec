@@ -1,22 +1,10 @@
-# error do
-#   e = request.env['sinatra.error']
-#   puts e.to_s
-#   puts e.backtrace.join("\n")
-#   "Application error"
-# end
+set :root, File.dirname(__FILE__)
+
+require 'sinatra-sindalli'
+set :cache, Dalli::Client.new('localhost:11211', :compression => true)
 
 $LOAD_PATH.unshift(File.dirname(__FILE__) + '/lib')
 require 'textile/spec'
-
-helpers do
-	def admin?
-		request.cookies[Blog.admin_cookie_key] == Blog.admin_cookie_value
-	end
-
-	def auth
-		stop [ 401, 'Not authorized' ] unless admin?
-	end
-end
 
 layout 'layout'
 # set :haml, :format => :html5
