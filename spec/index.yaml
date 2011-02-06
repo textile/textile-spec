@@ -1,10 +1,12 @@
-- Writing Paragraph Text: 
-  file: paragraph_text
-- Page Layout: 
-  file: page_layout
-- Phrase modifiers: 
-  file: phrase_modifiers
-- Attributes: 
-  file: attributes
-- HTML Integration and Escapement: 
-  file: html
+:version: 0.0.1
+:specs:
+  - Writing Paragraph Text: 
+    file: paragraph_text
+  - Page Layout: 
+    file: page_layout
+  - Phrase modifiers: 
+    file: phrase_modifiers
+  - Attributes: 
+    file: attributes
+  - HTML Integration and Escapement: 
+    file: html

@@ -1,0 +1,35 @@
+- Simple paragraphs: 
+  - Simple paragraphs: 
+      desc: <p>Paragraphs are separated by a blank line.</p>
+      input: |-
+        This is a paragraph.
+        
+        This is another paragraph
+  - Explicit paragraphs: 
+      desc: <p>You can explicitly identify a paragraph with <code>p. </code> (p-period-space) before the paragraph.</p>
+      input: |-
+        p. This is one paragraph.
+        
+        p. This is another.
+- Line breaks: 
+  - Line breaks: 
+      desc: <p>Lines that don&#8217;t have a blank line in between are part of the same paragraph.</p>
+      input: |-
+        Roses are red,
+        Violets are blue,
+        I'd like a sandwich;
+        Perhaps even two.
+  - Line breaks in code: 
+      desc: <p>Line breaks in preformatted sections don&#8217;t become <span class="caps">HTML</span> breaks.</p>
+      input: |-
+        <pre>
+        Mirror mirror
+        on the wall...
+        </pre>
+- Typographer's quotes: 
+  - Typographer's quotes: 
+      desc: <p>Straight quotation marks are converted into <abbr title='a.k.a. "curly quotes"'>typographer&#8217;s quotes</abbr>, which are easier on the eyes.</p>
+      input: "\"I said, 'hold the mayo' twice!\""
+  - Curly apostrophes: 
+      desc: <p>Apostrophes are also made curly.</p>
+      input: We went to Steven's mother's house for a party.

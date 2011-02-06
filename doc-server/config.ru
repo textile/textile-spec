@@ -9,5 +9,5 @@ Bundler.require
 #   :env => ENV['RACK_ENV']
 # )
 
-require './docs'
+require './app'
 run Sinatra::Application

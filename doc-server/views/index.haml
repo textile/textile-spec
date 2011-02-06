@@ -2,4 +2,4 @@
 %ul
   - @documents.each do |document|
     %li
-      %a{:href => "/#{document['file'].gsub('_','-')}/"}= document['title']
+      %a{:href => "/#{document.slug}/"}= document.title

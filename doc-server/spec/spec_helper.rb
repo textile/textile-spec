@@ -15,4 +15,8 @@ RSpec.configure do |conf|
   conf.include Rack::Test::Methods
 end
 
-require File.join(File.dirname(__FILE__), '..', 'docs')
+def index_fixture_path
+  "#{settings.root}/spec/fixtures/index.yaml"
+end
+
+require File.join(File.dirname(__FILE__), '..', 'app')

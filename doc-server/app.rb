@@ -4,7 +4,7 @@ require 'sinatra-sindalli'
 set :cache, Dalli::Client.new('localhost:11211', :compression => true)
 
 $LOAD_PATH.unshift(File.dirname(__FILE__) + '/lib')
-require 'textile/spec'
+require 'textile_spec'
 
 layout 'layout'
 set :haml, :format => :html5
@@ -12,8 +12,14 @@ set :haml, :format => :html5
 ### Public
 
 get '/' do
-  @documents = Textile::Spec.all
+  @documents = TextileSpec.specs
   haml :index
+end
+
+get '/:slug/' do
+  @spec = TextileSpec.find(params[:slug])
+  halt(404, "Page not found") unless @spec
+  haml :document
 end
 
 # get '/past/:year/:month/:day/:slug/' do
