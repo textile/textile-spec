@@ -3,10 +3,6 @@ describe "Docs App" do
   def app
     Sinatra::Application
   end
-  
-  before do
-    TextileSpec::Index.stub(:remote_index_yaml_uri).and_return(index_fixture_path)
-  end
 
   it "should respond to /" do
     get '/'

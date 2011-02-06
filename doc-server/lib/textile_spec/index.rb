@@ -2,6 +2,9 @@ module TextileSpec
   class Index < OpenStruct
     include YamlCache
     attr_reader :file
+    class << self
+      attr_accessor :remote_index_yaml_uri
+    end
     
     def initialize(yaml_uri=nil)
       @file = yaml_uri || self.class.remote_index_yaml_uri
@@ -19,10 +22,6 @@ module TextileSpec
     
     def specs
       @specs ||= SpecAssociation.new(@table[:specs])
-    end
-    
-    def self.remote_index_yaml_uri
-      "#{settings.root}/../spec/index.yaml"
     end
     
     def expand_spec_path(filename)

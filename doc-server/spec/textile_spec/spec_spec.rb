@@ -3,7 +3,7 @@ describe TextileSpec::Spec do
     settings.cache.flush
   end
   
-  let(:index) { TextileSpec::Index.new(index_fixture_path) }
+  let(:index) { TextileSpec::Index.new }
   let(:spec) { index.specs.first }
   
   describe "with lazy spec loading" do    

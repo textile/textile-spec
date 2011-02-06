@@ -15,8 +15,7 @@ RSpec.configure do |conf|
   conf.include Rack::Test::Methods
 end
 
-def index_fixture_path
-  "#{settings.root}/spec/fixtures/index.yaml"
-end
-
 require File.join(File.dirname(__FILE__), '..', 'app')
+
+# Point to yaml fixtures for testing
+TextileSpec::Index.remote_index_yaml_uri = "#{settings.root}/spec/fixtures/index.yaml"

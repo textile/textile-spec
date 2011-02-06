@@ -2,7 +2,7 @@ describe TextileSpec::Index do
   before(:each) do
     settings.cache.flush
   end
-  let(:index) { TextileSpec::Index.new(index_fixture_path) }
+  let(:index) { TextileSpec::Index.new }
   
   describe "#version" do
     subject { index.version }
@@ -51,12 +51,12 @@ describe TextileSpec::Index do
   describe "#load_yaml" do
     it "should set the data in the cache the first time" do
       expect {
-        TextileSpec::Index.new(index_fixture_path)
-      }.to change { settings.cache.get(index_fixture_path) }
+        TextileSpec::Index.new
+      }.to change { settings.cache.get(TextileSpec::Index.remote_index_yaml_uri) }
     end
     
     it "should subsequently load the data from the cache, not file" do
-      index = TextileSpec::Index.new(index_fixture_path) # First time is from file
+      index = TextileSpec::Index.new # First time is from file
       index.should_not_receive(:open)
       index.load_yaml # Second time is from memcache
     end
