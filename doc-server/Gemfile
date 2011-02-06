@@ -4,7 +4,6 @@ gem "rake"
 gem "sinatra"
 gem "haml"
 gem "dalli"
-gem "sinatra-sindalli"
 
 group :development, :test do
   gem 'shotgun'

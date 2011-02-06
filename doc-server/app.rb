@@ -1,6 +1,6 @@
 set :root, File.dirname(__FILE__)
 
-require 'sinatra-sindalli'
+require 'dalli'
 set :cache, Dalli::Client.new('localhost:11211', :compression => true)
 
 $LOAD_PATH.unshift(File.dirname(__FILE__) + '/lib')
