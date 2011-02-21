@@ -1,112 +1,161 @@
-- Headings: 
-  - Headings: 
-      desc: <p>Headings convey a hierarchy of information on the page.  They structure the document like an outline. Heading 1 is the most important or general and Heading 6 is the least important or most specific.  Leave a blank line after every heading.</p>
-      input: |-
-        h1. This is a Heading 1
-        
-        This might be an introductory paragraph on the general topic.
-        
-        h2. Heading 2 gets more specific
-        
-        Now we're getting into the details.
-- Block quotations: 
-  - Block quotations: 
-      desc: <p>Block quotations designate long quotations where a paragraph break is appropriate.  It ends with a blank line.</p>
-      input: |-
-        Even Mr. Sedaris, a noted luddite, has finally succumbed to doing his writing on a computer.  The Internet, however, remains an idiotic trifle:
-        
-        bq. I've never seen the Internet. I don't have email. I just enjoy lying on the couch and reading a magazine. When people say, "You should visit my Web page," I'm always perplexed by it. Why? What do you do there?
-        
-        Haven't we all pondered that at one time or another?
-  - Citing block quotations: 
-      desc: <p>Block quotations may include a citation <acronym title="Uniform Resource Locator"><span class="caps">URL</span></acronym> immediately following the period.</p>
-      input: |-
-        A standard Lorem Ipsum passage has been used since the 1500s:
-        
-        bq.:http://www.lipsum.com/ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  - Extended block quotations: 
-      desc: <p>If your block quotation needs to go on for more than one paragraph, use two periods.  The block quotation ends when a paragraph of a different type (such as an explicit paragraph or a header) is encountered.</p>
-      input: |-
-        bq.. This is one paragraph.
-        
-        Another paragraph, also part of the quote.
-        
-        p. A normal paragraph ends the quote.
-- Bullet lists: 
-  - Bullet lists: 
-      desc: <p>Make a bullet list with asterisks.  Use more asterisks to make nested lists.</p>
-      input: |-
-        Textile has several advantages over HTML:
-        
-        * It's easier on the eyes
-        * You don't have to write all those HTML tags
-        ** By not writing the tags yourself, you're less likely to make coding mistakes
-        ** It requires fewer keystrokes
-        *** You don't wear out the keys on your keyboard as fast
-        *** You won't wear out your fingers as fast
-        * You can write it much quicker
-- Numbered lists: 
-  - Numbered lists: 
-      desc: <p>Start each item in your numbered list with a number sign.  For nested lists, use more number signs.</p>
-      input: |-
-        How to make a PB&J:
-        
-        # Gather bread, peanut butter, and jelly
-        # Slice the bread if necessary
-        # Assemble the sandwich
-        ## Spread peanut butter on one slice of bread
-        ## Put jelly on another slice
-        ## Put the two slices together
-        # Enjoy
-- Mixed nested lists: 
-  - Mixed nested lists: 
-      desc: <p>You can nest ordered lists inside unordered lists and vice-versa.</p>
-      input: |-
-        Three reasons to walk to work:
-        
-        # It saves fuel
-        # It's good for your health
-        ** Walking burns calories
-        ** Time outside means lower stress
-        # It's good for the environment
-- Definition lists: 
-  - Definition lists: 
-      desc: <p>Each term in a definition list starts with a dash.  Put a <code>:=</code> between the term and the definition.  If your definition spans multiple lines, end the definition with <code>=:</code></p>
-      input: |-
-        - coffee := Hot and black
-        - tea := Also hot, but a little less black
-        - milk :=
-        Nourishing beverage for baby cows.
-        
-        Cold drink that goes great with cookies. =:
-- Footnotes: 
-  - Footnotes: 
-      desc: <p>To reference a footnote, place the footnote number in square brackets. Don&#8217;t forget the corresponding footnote at the bottom of the page.</p>
-      input: |-
-        42.7% of all statistics are made up on the spot.[1]
-        
-        fn1. "Dr. Katz":http://en.wikiquote.org/wiki/Steven_Wright
-- Tables: 
-  - Tables: 
-      desc: <p>Simple tables are made by separating each cell with vertical pipes.  Begin the cell with <code>_.</code> to indicate the cell is a heading.</p>
-      input: |-
-        |_. name|_. age|
-        |Walter|5|
-        |Florence|6|
-  - Table cell attributes: 
-      desc: <p>You can make a table cell span rows or columns with a slash or backslash and the number to span.  Classes, IDs, style, and alignment are also possible on table cells as with other elements.</p>
-      input: "|{background:#ddd}. Cell with background|Normal|\n\
-        |\x02. Cell spanning 2 columns|\n\
-        |/2. Cell spanning 2 rows|one|\n\
-        |two|\n\
-        |>. Right-aligned cell|<. Left-aligned cell|"
-  - Table attributes: 
-      desc: <p>To apply attributes to the entire table, use the <code>table.</code> signature on a line by itself before the table data.</p>
-      input: |-
-        table(#prices).
-        |Adults|$5|
-        |Children|$2|
-- Divisions: 
-  - Divisions: 
-      desc: <p><code>DIV</code> tags are used to define a division or section in an <span class="caps">HTML</span> document.  It has no inherent meaning, but is often used by designers and developers to group or style part of a page differently than another.  You can easily create a <code>div</code> with Textile but most people who need a <code>div</code> just use <a href="/textile/html-integration-and-escapement/#block-html"><span class="caps">HTML</span> tags</a> in their Textile.</p>
-      input: div. A simple div.
+Headings:
+  Headings:
+    input: ! 'h1. This is a Heading 1
+
+
+      This might be an introductory paragraph on the general topic.
+
+
+      h2. Heading 2 gets more specific
+
+
+      Now we''re getting into the details.'
+    desc: <p>Headings convey a hierarchy of information on the page.  They structure
+      the document like an outline. Heading 1 is the most important or general and
+      Heading 6 is the least important or most specific.  Leave a blank line after
+      every heading.</p>
+Block quotations:
+  Block quotations:
+    input: ! 'Even Mr. Sedaris, a noted luddite, has finally succumbed to doing
+      his writing on a computer.  The Internet, however, remains an idiotic trifle:
+
+
+      bq. I''ve never seen the Internet. I don''t have email. I just enjoy lying
+      on the couch and reading a magazine. When people say, "You should visit my
+      Web page," I''m always perplexed by it. Why? What do you do there?
+
+
+      Haven''t we all pondered that at one time or another?'
+    desc: <p>Block quotations designate long quotations where a paragraph break
+      is appropriate.  It ends with a blank line.</p>
+  Citing block quotations:
+    input: ! 'A standard Lorem Ipsum passage has been used since the 1500s:
+
+
+      bq.:http://www.lipsum.com/ Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    desc: <p>Block quotations may include a citation <acronym title="Uniform Resource
+      Locator"><span class="caps">URL</span></acronym> immediately following the
+      period.</p>
+  Extended block quotations:
+    input: ! 'bq.. This is one paragraph.
+
+
+      Another paragraph, also part of the quote.
+
+
+      p. A normal paragraph ends the quote.'
+    desc: <p>If your block quotation needs to go on for more than one paragraph,
+      use two periods.  The block quotation ends when a paragraph of a different
+      type (such as an explicit paragraph or a header) is encountered.</p>
+Bullet lists:
+  Bullet lists:
+    input: ! 'Textile has several advantages over HTML:
+
+
+      * It''s easier on the eyes
+
+      * You don''t have to write all those HTML tags
+
+      ** By not writing the tags yourself, you''re less likely to make coding mistakes
+
+      ** It requires fewer keystrokes
+
+      *** You don''t wear out the keys on your keyboard as fast
+
+      *** You won''t wear out your fingers as fast
+
+      * You can write it much quicker'
+    desc: <p>Make a bullet list with asterisks.  Use more asterisks to make nested
+      lists.</p>
+Numbered lists:
+  Numbered lists:
+    input: ! 'How to make a PB&J:
+
+
+      # Gather bread, peanut butter, and jelly
+
+      # Slice the bread if necessary
+
+      # Assemble the sandwich
+
+      ## Spread peanut butter on one slice of bread
+
+      ## Put jelly on another slice
+
+      ## Put the two slices together
+
+      # Enjoy'
+    desc: <p>Start each item in your numbered list with a number sign.  For nested
+      lists, use more number signs.</p>
+Mixed nested lists:
+  Mixed nested lists:
+    input: ! 'Three reasons to walk to work:
+
+
+      # It saves fuel
+
+      # It''s good for your health
+
+      ** Walking burns calories
+
+      ** Time outside means lower stress
+
+      # It''s good for the environment'
+    desc: <p>You can nest ordered lists inside unordered lists and vice-versa.</p>
+Definition lists:
+  Definition lists:
+    input: ! '- coffee := Hot and black
+
+      - tea := Also hot, but a little less black
+
+      - milk :=
+
+      Nourishing beverage for baby cows.
+
+
+      Cold drink that goes great with cookies. =:'
+    desc: <p>Each term in a definition list starts with a dash.  Put a <code>:=</code>
+      between the term and the definition.  If your definition spans multiple lines,
+      end the definition with <code>=:</code></p>
+Footnotes:
+  Footnotes:
+    input: ! '42.7% of all statistics are made up on the spot.[1]
+
+
+      fn1. "Dr. Katz":http://en.wikiquote.org/wiki/Steven_Wright'
+    desc: <p>To reference a footnote, place the footnote number in square brackets.
+      Don&#8217;t forget the corresponding footnote at the bottom of the page.</p>
+Tables:
+  Tables:
+    input: ! '|_. name|_. age|
+
+      |Walter|5|
+
+      |Florence|6|'
+    desc: <p>Simple tables are made by separating each cell with vertical pipes.  Begin
+      the cell with <code>_.</code> to indicate the cell is a heading.</p>
+  Table cell attributes:
+    input: ! "|{background:#ddd}. Cell with background|Normal|\n|\x02. Cell spanning
+      2 columns|\n|/2. Cell spanning 2 rows|one|\n|two|\n|>. Right-aligned cell|<.
+      Left-aligned cell|"
+    desc: <p>You can make a table cell span rows or columns with a slash or backslash
+      and the number to span.  Classes, IDs, style, and alignment are also possible
+      on table cells as with other elements.</p>
+  Table attributes:
+    input: ! 'table(#prices).
+
+      |Adults|$5|
+
+      |Children|$2|'
+    desc: <p>To apply attributes to the entire table, use the <code>table.</code>
+      signature on a line by itself before the table data.</p>
+Divisions:
+  Divisions:
+    input: div. A simple div.
+    desc: <p><code>DIV</code> tags are used to define a division or section in an
+      <span class="caps">HTML</span> document.  It has no inherent meaning, but
+      is often used by designers and developers to group or style part of a page
+      differently than another.  You can easily create a <code>div</code> with Textile
+      but most people who need a <code>div</code> just use <a href="/textile/html-integration-and-escapement/#block-html"><span
+      class="caps">HTML</span> tags</a> in their Textile.</p>

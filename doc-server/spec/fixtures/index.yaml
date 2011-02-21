@@ -1,12 +1,12 @@
-:version: 0.0.1
+:version: 99.99.99
 :specs:
-  - Writing Paragraph Text: 
+  Writing Paragraph Text: 
     file: paragraph_text.yaml
-  # - Page Layout: 
+  # Page Layout: 
   #   file: page_layout.yaml
-  # - Phrase modifiers: 
+  # Phrase modifiers: 
   #   file: phrase_modifiers.yaml
-  # - Attributes: 
+  # Attributes: 
   #   file: attributes.yaml
-  # - HTML Integration and Escapement: 
+  # HTML Integration and Escapement: 
   #   file: html.yaml

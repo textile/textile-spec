@@ -2,8 +2,9 @@ module TextileSpec
   class SpecAssociation < Array
     
     def initialize(specs)
-      specs.map! {|data| Spec.new(data) }
-      super(specs)
+      super(specs.map do |data|
+        Spec.new(data)
+      end)
     end
     
     def find(slug)

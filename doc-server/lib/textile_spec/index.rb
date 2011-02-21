@@ -11,15 +11,6 @@ module TextileSpec
       super(index_data)
     end
     
-    def index_data
-      load_yaml.tap do |index|
-        index[:specs].map do |spec|
-          spec.delete(spec['title'] = spec.key(nil))
-          spec['file'] = expand_spec_path(spec['file'])
-        end
-      end
-    end
-    
     def specs
       @specs ||= SpecAssociation.new(@table[:specs])
     end
@@ -27,6 +18,17 @@ module TextileSpec
     def expand_spec_path(filename)
       File.join(File.dirname(self.file), filename)
     end
+    
+    private
+      def index_data
+        load_yaml.tap do |index|
+          index[:specs] = index[:specs].map do |title, metadata|
+            metadata['title'] = title
+            metadata['file'] = expand_spec_path(metadata['file'])
+            metadata
+          end
+        end
+      end
     
   end
 end

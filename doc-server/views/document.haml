@@ -1,1 +1,7 @@
 %h1= @spec.title
+
+- @spec.examples.each do |heading, examples|
+  %h2= heading
+  - examples.each do |example_title, example|
+    %h3= example_title
+    %pre= example.inspect

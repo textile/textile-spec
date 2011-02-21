@@ -14,7 +14,7 @@ describe TextileSpec::Spec do
   
   describe "#examples" do
     subject { spec.examples }
-    it { should be_an(Array) }
+    it { should be_a(Hash) }
   end
   
   it "should have a #slug" do

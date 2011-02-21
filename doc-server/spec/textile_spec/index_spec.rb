@@ -28,7 +28,7 @@ describe TextileSpec::Index do
     
     it "should each have examples" do
       subject.first.should respond_to('examples')
-      subject.first.examples.should be_an(Array)
+      subject.first.examples.should be_a(Hash)
     end
   end
   
@@ -60,6 +60,5 @@ describe TextileSpec::Index do
       index.should_not_receive(:open)
       index.load_yaml # Second time is from memcache
     end
-  end
-  
+  end  
 end

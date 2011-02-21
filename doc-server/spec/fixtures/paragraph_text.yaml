@@ -1,35 +1,103 @@
-- Simple paragraphs: 
-  - Simple paragraphs: 
-      desc: <p>Paragraphs are separated by a blank line.</p>
-      input: |-
-        This is a paragraph.
-        
-        This is another paragraph
-  - Explicit paragraphs: 
-      desc: <p>You can explicitly identify a paragraph with <code>p. </code> (p-period-space) before the paragraph.</p>
-      input: |-
-        p. This is one paragraph.
-        
-        p. This is another.
-- Line breaks: 
-  - Line breaks: 
-      desc: <p>Lines that don&#8217;t have a blank line in between are part of the same paragraph.</p>
-      input: |-
-        Roses are red,
-        Violets are blue,
-        I'd like a sandwich;
-        Perhaps even two.
-  - Line breaks in code: 
-      desc: <p>Line breaks in preformatted sections don&#8217;t become <span class="caps">HTML</span> breaks.</p>
-      input: |-
-        <pre>
-        Mirror mirror
-        on the wall...
-        </pre>
-- Typographer's quotes: 
-  - Typographer's quotes: 
-      desc: <p>Straight quotation marks are converted into <abbr title='a.k.a. "curly quotes"'>typographer&#8217;s quotes</abbr>, which are easier on the eyes.</p>
-      input: "\"I said, 'hold the mayo' twice!\""
-  - Curly apostrophes: 
-      desc: <p>Apostrophes are also made curly.</p>
-      input: We went to Steven's mother's house for a party.
+Simple paragraphs:
+  Simple paragraphs:
+    input: ! 'This is a paragraph.
+
+
+      This is another paragraph'
+    desc: <p>Paragraphs are separated by a blank line.</p>
+  Explicit paragraphs:
+    input: ! 'p. This is one paragraph.
+
+
+      p. This is another.'
+    desc: <p>You can explicitly identify a paragraph with <code>p. </code> (p-period-space)
+      before the paragraph.</p>
+Line breaks:
+  Line breaks:
+    input: ! 'Roses are red,
+
+      Violets are blue,
+
+      I''d like a sandwich;
+
+      Perhaps even two.'
+    desc: <p>Lines that don&#8217;t have a blank line in between are part of the
+      same paragraph.</p>
+  Line breaks in code:
+    input: ! '<pre>
+
+      Mirror mirror
+
+      on the wall...
+
+      </pre>'
+    desc: <p>Line breaks in preformatted sections don&#8217;t become <span class="caps">HTML</span>
+      breaks.</p>
+Typographer's quotes:
+  Typographer's quotes:
+    input: ! '"I said, ''hold the mayo'' twice!"'
+    desc: <p>Straight quotation marks are converted into <abbr title='a.k.a. "curly
+      quotes"'>typographer&#8217;s quotes</abbr>, which are easier on the eyes.</p>
+  Curly apostrophes:
+    input: We went to Steven's mother's house for a party.
+    desc: <p>Apostrophes are also made curly.</p>
+Dashes:
+  Dashes:
+    input: I could be happy--fantastically happy--on twenty-one thousand a year
+      if I only had to work 9 am - 1 pm.
+    desc: <p>Single hyphens between words become en dashes; double hyphens become
+      em dashes.  Hyphenated words are left alone.</p>
+  En dash must have spaces:
+    input: June - July 1967
+    desc: <p>A dash, when it appears between words, must be surrounded by spaces.</p>
+  Em dash spaces optional:
+    input: Please use the em dash closed--or open if you must -- but I prefer it
+      closed.
+    desc: ! '<p>Em dashes may be set open or closed.</p>
+
+      <blockquote cite="http://en.wikipedia.org/wiki/Dash#Em_dash">
+
+      <p>According to most American sources (e.g., <a href="http://en.wikipedia.org/wiki/The_Chicago_Manual_of_Style">The
+      Chicago Manual of Style</a>) and to some British sources (e.g., <a href="http://en.wikipedia.org/wiki/Hart%27s_Rules">The
+      Oxford Guide to Style</a>), an em dash should always be set closed (not surrounded
+      by spaces). But the practice in many parts of the English-speaking world,
+      also the style recommended by <a href="http://en.wikipedia.org/wiki/The_New_York_Times_Manual_of_Style_and_Usage">The
+      New York Times Manual of Style and Usage</a>, sets it open (separates it from
+      its surrounding words by using spaces) when it is being used parenthetically.</p>
+
+      </blockquote>'
+Ellipses:
+  Ellipses:
+    input: He thought and thought ... and then thought some more.
+    desc: <p>Three periods become the ellipsis character.</p>
+  Ellipses without leading space:
+    input: ! '"Four score and seven years ago our fathers brought forth...a new
+      nation...dedicated to the proposition that all men are created equal...."'
+    desc: <p>Consult your style manual for proper use of ellipses in conjunction
+      with spaces and other punctuation.</p>
+Dimension sign:
+  Dimension sign:
+    input: 4 x 4 = 16
+    desc: <p>The lowercase letter x between numbers becomes a dimension sign.</p>
+  Dimension with quotes:
+    input: My office measures 5' x 5'6".
+    desc: <p>In RedCloth, quotes may be applied to the dimensions to represent feet
+      and inches.</p>
+  Dimension spaces optional:
+    input: 4x4=16
+    desc: <p>Spaces between the numbers and the x are optional.</p>
+Registered, trademark, and copyright symbols:
+  Registered, trademark, and copyright symbols:
+    input: RegisteredTrademark(r), Trademark(tm), and Copyright (c) 2008
+    desc: <p>The copyright, registered, and trademark symbols can be produced by
+      placing the letters in parentheses.</p>
+Acronyms:
+  Acronyms:
+    input: The EPA(Environmental Protection Agency) is measuring GHG(greenhouse
+      gas) emissions.
+    desc: <p>You can provide the definition for acronyms inside parentheses.</p>
+Uppercase:
+  Uppercase:
+    input: Many NASDAQ companies are ISO certified.
+    desc: <p>Uppercase words are enclosed in a span element that can be styled to
+      your liking.  Administrators can disable this feature with <code>:no_span_caps</code>.</p>
