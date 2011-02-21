@@ -136,7 +136,7 @@ Tables:
     desc: <p>Simple tables are made by separating each cell with vertical pipes.  Begin
       the cell with <code>_.</code> to indicate the cell is a heading.</p>
   Table cell attributes:
-    input: ! "|{background:#ddd}. Cell with background|Normal|\n|\x02. Cell spanning
+    input: ! "|{background:#ddd}. Cell with background|Normal|\n|\2. Cell spanning
       2 columns|\n|/2. Cell spanning 2 rows|one|\n|two|\n|>. Right-aligned cell|<.
       Left-aligned cell|"
     desc: <p>You can make a table cell span rows or columns with a slash or backslash
