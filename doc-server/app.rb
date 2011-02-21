@@ -18,7 +18,8 @@ end
 ### Public
 
 get '/' do
-  @documents = TextileSpec.specs
+  @index = TextileSpec::Index.new
+  @documents = @index.specs
   haml :index
 end
 
