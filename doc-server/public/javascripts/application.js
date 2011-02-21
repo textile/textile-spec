@@ -1,6 +1,6 @@
 function toggle_html(v) {
   var v = $('#toggle-html-output').is(':checked');
-  $.cookie("textile_html_visible", v ? "true" : null);
+  $.cookie("textile_html_visible", v ? "true" : null, {path: '/'});
   html_visible(v, "slow");
 }
 
