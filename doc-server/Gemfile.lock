@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    RedCloth (4.2.7)
     ZenTest (4.4.2)
     archive-tar-minitar (0.5.2)
     columnize (0.3.2)
@@ -34,6 +35,7 @@ GEM
       ruby-debug-base19 (>= 0.11.19)
     ruby_core_source (0.1.4)
       archive-tar-minitar (>= 0.5.2)
+    sass (3.1.0.alpha.221)
     shotgun (0.8)
       rack (>= 1.0)
     sinatra (1.1.2)
@@ -45,6 +47,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  RedCloth
   ZenTest
   dalli
   haml
@@ -53,5 +56,6 @@ DEPENDENCIES
   rake
   rspec
   ruby-debug19
+  sass
   shotgun
   sinatra

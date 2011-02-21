@@ -1,0 +1,49 @@
+@import 'reset';
+@import 'defaults';
+@import 'type';
+@import 'forms';
+
+.example-group {
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.input,
+.html,
+.output {
+  width: 48%;
+  float: left;
+/*  border: 1px solid black;*/
+  background: gray;
+  pre, .output-inner {
+    margin: 1em;
+  }
+  .type {
+    font-weight: bold;
+    float: right;
+    margin: 5px;
+  }
+}
+.html, .output {
+/*  margin-left: 400px;*/
+  margin-right: 0;
+  float: right;
+}
+.input {
+  background-color: #E3CBC9;
+  border-color: #770300;
+  .type { color: #770300; }
+}
+.html {
+  margin-bottom: 10px;
+  background-color: #DDDAD5;
+  border-color: #7F7F7F;
+  .type { color: #555555; }
+}
+.output {
+  clear: right;
+  background-color: #EDE2C4;
+  border-color: #E3942C;
+  .type { color: #D27100; }
+}

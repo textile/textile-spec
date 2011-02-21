@@ -1,7 +1,27 @@
+- @title = "#{@spec.title} - Textile Reference"
 %h1= @spec.title
 
+%p
+  %input{:id=>"toggle-html-output", :type=>"checkbox"}
+  Show HTML output
+
 - @spec.examples.each do |heading, examples|
-  %h2= heading
-  - examples.each do |example_title, example|
-    %h3= example_title
-    %pre= example.inspect
+  .example-group
+    %h2= heading
+    - examples.each do |example_title, example|
+      - unless example_title == heading
+        %h3= example_title 
+      .example.clearfix{:id => example_title.gsub(" ", '-')}
+        .desc
+          = example['desc']
+        .input
+          .type Textile
+          %pre&= example['input']
+        .html{:style => "display:none"}
+          .type HTML
+          %pre&= RedCloth.new(example['input']).to_html
+        .output
+          .type Browser
+          .output-inner
+            :textile
+              #{example['input']}

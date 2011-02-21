@@ -4,6 +4,8 @@ gem "rake"
 gem "sinatra"
 gem "haml"
 gem "dalli"
+gem "RedCloth"
+gem "sass"
 
 group :development, :test do
   gem 'shotgun'
