@@ -2,8 +2,10 @@
 %h1= @spec.title
 
 %p
-  %input{:id=>"toggle-html-output", :type=>"checkbox"}
-  Show HTML output
+  %a{:href => '/'} Back to index
+%p.check_boxes
+  %input{:id => "toggle-html-output", :type=>"checkbox"}
+  %label{:for => "toggle-html-output"} Show HTML output
 
 - @spec.examples.each do |heading, examples|
   .example-group
