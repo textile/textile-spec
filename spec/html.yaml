@@ -6,7 +6,7 @@ HTML spans:
       to the span (see <a href="/textile/attributes">attributes</a>).</p>
 Inline code:
   Inline code:
-    input: On the command line, you can just type @redcloth@.
+    input: On the command line, you can just type @bash@.
     desc: <p>To mark code in your text, surround the code with at signs.</p>
 Block code:
   Block code:
@@ -60,7 +60,7 @@ Block HTML:
       </form>
 
       </div>'
-    desc: <p>You can use <span class="caps">HTML</span> freely within your RedCloth
+    desc: <p>You can use <span class="caps">HTML</span> freely within your Textile
       4 Textile.  <span class="caps">HTML</span> tags on a line by themselves will
       not be mangled.  Don&#8217;t forget to leave a blank line after any Textile,
       just like usual.</p>
@@ -74,7 +74,7 @@ No Textile:
 
 
       Use ==*asterisks*== to say something *strongly*.'
-    desc: <p>You can have RedCloth skip a chunk of text with the <code>&lt;notextile&gt;</code>
+    desc: <p>You can have Textile skip a chunk of text with the <code>&lt;notextile&gt;</code>
       tag or double-equals.</p>
   Notextile block:
     input: ! 'notextile. This has *no* textile formatting, see?

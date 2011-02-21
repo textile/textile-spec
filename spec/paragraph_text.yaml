@@ -81,7 +81,7 @@ Dimension sign:
     desc: <p>The lowercase letter x between numbers becomes a dimension sign.</p>
   Dimension with quotes:
     input: My office measures 5' x 5'6".
-    desc: <p>In RedCloth, quotes may be applied to the dimensions to represent feet
+    desc: <p>In Textile, quotes may be applied to the dimensions to represent feet
       and inches.</p>
   Dimension spaces optional:
     input: 4x4=16
