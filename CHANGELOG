@@ -1,0 +1,6 @@
+== 0.0.1
+
+* Initial import of http://redcloth.org/textile examples and conversion
+  to YAML. Still needs manual repair.
+* Scrubbed RedCloth references
+* Described format in the README

@@ -1,3 +1,29 @@
 h1. Textile Specifications
 
-These are the specifications for the Textile markup language. Each implementation (libraries for PHP, Ruby, Python, etc.) can use them to make sure it is compliant. If the implementation uses git, the specifications can be incorporated as a git submodule and parsed with a YAML library for your platform.
+These are the specifications for the Textile markup language. Implementations (libraries for PHP, Ruby, Python, etc.) can use them in their tests to make sure they are compliant and they are also used to generate the online Textile documentation.
+
+h2. Organization
+
+The files herein each specify an aspect of the Textile markup language. They are organized from a user's perspective, not according to their implementation. As the specification is developed, please make an effort to keep them abstract, describing Textile the markup language as a set of rules unto itself rather than teasing out bugs specific to your implementation.
+
+h2. Format
+
+h3. Index
+
+Each spec file must be listed in the :specs section of index.yaml. Its file path is relative to the index file.
+
+h3. Specs
+
+The examples in the specs are grouped into sections. Frequently, the first example in a section repeats the name in a section. Example names are optional; if not given, the example will serve for a test only and will not appear in the Textile reference.
+
+Each example should have:
+
+* desc - A description of the example--in Textile, of course!
+* input - The Textile code to be passed into a parser
+* output - The expected output from a parser
+
+h2. Using in your parser tests
+
+If you are the maintainer of a Textile parsing library, you can incorporate these specifications into your automated tests. YAML parsing libraries are available for many platforms; you just have to write the code to iterate over the examples.
+
+If your project uses git, the specifications can be incorporated as a git submodule for easy tracking of the standard to which your library complies.
