@@ -4,7 +4,7 @@ These are the specifications for the Textile markup language. Implementations (l
 
 h2. Organization
 
-The files herein each specify an aspect of the Textile markup language. They are organized from a user's perspective, not according to their implementation. As the specification is developed, please make an effort to keep them abstract, describing Textile the markup language as a set of rules unto itself rather than teasing out bugs specific to your implementation.
+The files herein each specify an aspect of the Textile markup language. They are organized from a user's perspective, not according to their implementation. As the specification is developed, please make an effort to keep it abstract, describing Textile the markup language according to what it should do on all platforms. For the most part, leave the testing of what it should not do and bugs it should not have to your platform-specific tests.
 
 h2. Format
 
@@ -14,7 +14,9 @@ Each spec file must be listed in the :specs section of index.yaml. Its file path
 
 h3. Specs
 
-The examples in the specs are grouped into sections. Frequently, the first example in a section repeats the name in a section. Example names are optional; if not given, the example will serve for a test only and will not appear in the Textile reference.
+The examples in the specs are grouped into sections. Frequently, the first example in a section repeats the name of its section, in which case the reference manual will include the example without a redundant headline.
+
+Example names may be strings or symbols. If the name is a symbol (initial colon and underscores instead of spaces), the example will serve for a test only and will not appear in the Textile reference.
 
 Each example should have:
 
@@ -22,8 +24,32 @@ Each example should have:
 * input - The Textile code to be passed into a parser
 * output - The expected output from a parser
 
+Example:
+
+<pre>
+Paragraphs:
+  Paragraphs:
+    desc: Paragraphs are the default block type.
+    input: "This is a paragraph."
+    output: "<p>This is a paragraph.</>"
+  Explicit paragraphs:
+    desc: They can also be made explicit with [@p. @]
+    input: "p. Paragraph"
+    output: "<p>Paragraph</p>"
+  :capital_p:
+    desc: A capital P abbreviation may start the sentence.
+    input: "P. T. Barnum was a U.S. Showman"
+    output: "<p>P. T. Barnum was a U.S. Showman</p>"
+</pre>
+
 h2. Using in your parser tests
 
 If you are the maintainer of a Textile parsing library, you can incorporate these specifications into your automated tests. YAML parsing libraries are available for many platforms; you just have to write the code to iterate over the examples.
 
 If your project uses git, the specifications can be incorporated as a git submodule for easy tracking of the standard to which your library complies.
+
+h2. Development
+
+Development of the Textile spec takes place on GitHub. You may fork the spec, make changes and send a pull request. Discussion of examples will take place using GitHub comments on the pull request, commit, file or line in question.
+
+All development is to take place on *topic* or *version branches*. Once project admins approve changes and increment the spec version, they will merge it to the *master branch*. This way, the master branch is always in a consistent, "official" state and can be relied upon in implementation tests and reference guides. Experimentation and discussion takes place elsewhere.
