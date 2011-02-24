@@ -28,9 +28,14 @@ Language:
 Alignment:
   Alignment:
     desc: 'Text inside blocks can be aligned in four ways:'
-    input: "p<. align left\r\n\r\np>. align right\r\n\r\np=. centered\r\n\r\np<>.
-      justified justified justified justified justified justified justified justified
-      justified"
+    input: |-
+      p<. align left
+      
+      p>. align right
+      
+      p=. centered
+      
+      p<>. justified justified justified justified justified justified justified justified justified
     output: |-
       <p style="text-align:left;">align left</p>
       <p style="text-align:right;">align right</p>
@@ -41,8 +46,12 @@ Indentation:
     desc: Text can be indented with single parentheses.  For each left paren, left
       pad 1em.  For each right paren, right pad 1em.  They may be combined for left
       and right padding.
-    input: "p(. Left pad 1em.\r\n\r\np)). Right pad 2em.\r\n\r\np(). Pad both
-      left and right sides 1em."
+    input: |-
+      p(. Left pad 1em.
+      
+      p)). Right pad 2em.
+      
+      p(). Pad both left and right sides 1em.
     output: |-
       <p style="padding-left:1em;">Left pad 1em.</p>
       <p style="padding-right:2em;">Right pad 2em.</p>

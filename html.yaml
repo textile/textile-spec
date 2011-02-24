@@ -13,7 +13,10 @@ Inline code:
 Block code:
   Block code:
     desc: You can insert a block of code with the @bc.@ block signature.
-    input: "bc. # Output \"I love Ruby\"\r\nsay = \"I love Ruby\"\r\nputs say"
+    input: |-
+      bc. # Output "I love Ruby"
+      say = "I love Ruby"
+      puts say
     output: |-
       <pre><code># Output "I love Ruby"
       say = "I love Ruby"
@@ -21,9 +24,16 @@ Block code:
   Extended block code:
     desc: Use @bc..@ and the block of code will continue to include blank lines
       until it encounters another block signature such as @p.@
-    input: "bc.. # Output \"I love Ruby\"\r\nsay = \"I love Ruby\"\r\nputs say\r\n\r\n#
-      Output \"I *LOVE* RUBY\"\r\nsay['love'] = \"*love*\"\r\nputs say.upcase\r\n\r\np.
-      And that is how you do it."
+    input: |-
+      bc.. # Output "I love Ruby"
+      say = "I love Ruby"
+      puts say
+      
+      # Output "I *LOVE* RUBY"
+      say['love'] = "*love*"
+      puts say.upcase
+      
+      p. And that is how you do it.
     output: |-
       <pre><code># Output "I love Ruby"
       say = "I love Ruby"
@@ -44,26 +54,52 @@ Block HTML:
     desc: You can use HTML freely within your Textile 4 Textile.  HTML tags on
       a line by themselves will not be mangled.  Don't forget to leave a blank line
       after any Textile, just like usual.
-    input: "<div id=\"shopping-cart\">\r\n<form action=\"form_action\" method=\"get\">\r\nh3.
-      Your cart\r\n\r\n* Item one\r\n* Item two\r\n\r\n<p><input type=\"submit\"
-      value=\"Check Out\" /></p>\r\n\r\n</form>\r\n</div>"
-    output: "<div id=\"shopping-cart\">\n<form action=\"form_action\" method=\"get\">\n<h3>Your
-      cart</h3>\n<ul>\n\t<li>Item one</li>\n\t<li>Item two</li>\n</ul>\n<p><input
-      type=\"submit\" value=\"Check Out\" /></p>\n</form>\n</div>"
+    input: |-
+      <div id="shopping-cart">
+      <form action="form_action" method="get">
+      h3. Your cart
+      
+      * Item one
+      * Item two
+      
+      <p><input type="submit" value="Check Out" /></p>
+      
+      </form>
+      </div>
+    output: |-
+      <div id="shopping-cart">
+      <form action="form_action" method="get">
+      <h3>Your cart</h3>
+      <ul>
+      	<li>Item one</li>
+      	<li>Item two</li>
+      </ul>
+      <p><input type="submit" value="Check Out" /></p>
+      </form>
+      </div>
 No Textile:
   No Textile:
     desc: You can have Textile skip a chunk of text with the @<notextile>@ tag
       or double-equals.
-    input: "<notextile>\r\nDon't touch this!\r\n</notextile>\r\n\r\nUse ==*asterisks*==
-      to say something *strongly*."
+    input: |-
+      <notextile>
+      Don't touch this!
+      </notextile>
+      
+      Use ==*asterisks*== to say something *strongly*.
     output: |-
       Don't touch this!
       <p>Use *asterisks* to say something <strong>strongly</strong>.</p>
   Notextile block:
     desc: Notextile can also be used as a normal or extended Textile block.
-    input: "notextile. This has *no* textile formatting, see?\r\n\r\nnotextile..
-      And this notextile block\r\n\r\nJust keeps going and going.\r\n\r\np. Until
-      you end it with another block."
+    input: |-
+      notextile. This has *no* textile formatting, see?
+      
+      notextile.. And this notextile block
+      
+      Just keeps going and going.
+      
+      p. Until you end it with another block.
     output: |-
       This has *no* textile formatting, see?
 
@@ -75,21 +111,45 @@ Preformatted text:
     desc: Preformatted text can be put in a @pre.@ block and its whitespace will
       be preserved.  @pre.@ is almost identical to @bc.@, except that @<code>...</code>@
       tags are not used within the @<pre>@ block.
-    input: "pre.      Text in a pre block\r\nis displayed in a fixed-width\r\n
-      \    font. It preserves\r\n  s p a c e s, line breaks\r\n     and ascii bunnies.\r\n
-      \          _     _   \r\n           \\`\\ /`/   \r\n            \\ V /    \r\n
-      \           /. .\\    \r\n           =\\ T /=   \r\n            / ^ \\    \r\n
-      \        {}/\\\\ //\\   \r\n         __\\ \" \" /__ \r\n        (____/^\\____)"
-    output: "<pre>     Text in a pre block\nis displayed in a fixed-width\n     font.
-      It preserves\n  s p a c e s, line breaks\n     and ascii bunnies.\n           _
-      \    _   \n           \\`\\ /`/   \n            \\ V /    \n            /.
-      .\\    \n           =\\ T /=   \n            / ^ \\    \n         {}/\\\\
-      //\\   \n         __\\ \" \" /__ \n        (____/^\\____)</pre>"
+    input: |-
+      pre.      Text in a pre block
+      is displayed in a fixed-width
+           font. It preserves
+        s p a c e s, line breaks
+           and ascii bunnies.
+                 _     _   
+                 \`\ /`/   
+                  \ V /    
+                  /. .\    
+                 =\ T /=   
+                  / ^ \    
+               {}/\\ //\   
+               __\ " " /__ 
+              (____/^\____)
+    output: |-
+      <pre>     Text in a pre block
+      is displayed in a fixed-width
+           font. It preserves
+        s p a c e s, line breaks
+           and ascii bunnies.
+                 _     _   
+                 \`\ /`/   
+                  \ V /    
+                  /. .\    
+                 =\ T /=   
+                  / ^ \    
+               {}/\\ //\   
+               __\ " " /__ 
+              (____/^\____)</pre>
   Extended preformatted:
     desc: Use @pre..@ to make a block of extended preformatted text that continues
       until it encounters another block signature, like @p.@
-    input: "pre.. All monospaced\r\n\r\nEven the blank lines\r\n\r\np. But now
-      a paragraph"
+    input: |-
+      pre.. All monospaced
+      
+      Even the blank lines
+      
+      p. But now a paragraph
     output: |-
       <pre>All monospaced</pre>
       <pre>Even the blank lines</pre>

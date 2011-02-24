@@ -1,22 +1,31 @@
 Simple paragraphs:
   Simple paragraphs:
     desc: Paragraphs are separated by a blank line.
-    input: "This is a paragraph.\r\n\r\nThis is another paragraph"
+    input: |-
+      This is a paragraph.
+      
+      This is another paragraph
     output: |-
       <p>This is a paragraph.</p>
       <p>This is another paragraph</p>
   Explicit paragraphs:
     desc: You can explicitly identify a paragraph with [@p. @] (p-period-space)
       before the paragraph.
-    input: "p. This is one paragraph.\r\n\r\np. This is another."
+    input: |-
+      p. This is one paragraph.
+      
+      p. This is another.
     output: |-
       <p>This is one paragraph.</p>
       <p>This is another.</p>
 Line breaks:
   Line breaks:
     desc: Lines that don't have a blank line in between are part of the same paragraph.
-    input: "Roses are red,\r\nViolets are blue,\r\nI'd like a sandwich;\r\nPerhaps
-      even two."
+    input: |-
+      Roses are red,
+      Violets are blue,
+      I'd like a sandwich;
+      Perhaps even two.
     output: |-
       <p>Roses are red,<br />
       Violets are blue,<br />
@@ -24,7 +33,11 @@ Line breaks:
       Perhaps even two.</p>
   Line breaks in code:
     desc: Line breaks in preformatted sections don't become HTML breaks.
-    input: "<pre>\r\nMirror mirror\r\non the wall...\r\n</pre>"
+    input: |-
+      <pre>
+      Mirror mirror
+      on the wall...
+      </pre>
     output: |-
       <pre>
       Mirror mirror
@@ -97,10 +110,8 @@ Registered, trademark, and copyright symbols:
   Registered, trademark, and copyright symbols:
     desc: The copyright, registered, and trademark symbols can be produced by placing
       the letters in parentheses.
-    input: RegisteredTrademark(r), Trademark(tm), and Copyright (c) <r:date format="%Y"
-      />
-    output: <p>RegisteredTrademark&#174;, Trademark&#8482;, and Copyright &#169;
-      <r:date format="%Y" /></p>
+    input: RegisteredTrademark(r), Trademark(tm), and Copyright (c) 2011
+    output: <p>RegisteredTrademark&#174;, Trademark&#8482;, and Copyright &#169; 2011</p>
 Acronyms:
   Acronyms:
     desc: You can provide the definition for acronyms inside parentheses.

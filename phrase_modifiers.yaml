@@ -16,11 +16,12 @@ Stylistic offset:
       *without conveying any extra importance*, place two asterisks on either side.  Uses
       are key words in a document abstract, product names in a review, or other
       spans of text whose typical typographic presentation is boldened.
-    input: "Search results for **Textile**:\r\n\r\nh4. [\"**Textile** (markup
-      language) - Wikipedia\":http://en.wikipedia.org/wiki/Textile_(markup_language)]\r\n\r\n**Textile**
-      is a lightweight markup language originally developed by Dean Allen and billed
-      as a \"humane Web text generator\".  **Textile** converts its marked-up text
-      ..."
+    input: |-
+      Search results for **Textile**:
+      
+      h4. ["**Textile** (markup language) - Wikipedia":http://en.wikipedia.org/wiki/Textile_(markup_language)]
+      
+      **Textile** is a lightweight markup language originally developed by Dean Allen and billed as a "humane Web text generator".  **Textile** converts its marked-up text ...
     output: |-
       <p>Search results for <b>Textile</b>:</p>
       <h4><a href="http://en.wikipedia.org/wiki/Textile_(markup_language)"><b>Textile</b> (markup language) &#8211; Wikipedia</a></h4>
@@ -89,10 +90,11 @@ Links:
   Link alias:
     desc: If you link to a URL repeatedly, you can replace the URL with a link alias
       defined elsewhere in the Textile document.
-    input: "I'm really excited about \"Textile\":textile.  I love it so much,
-      I think I'll name my first child \"Textile\":textile.\r\n\r\n[textile]http://textileit.com"
-    output: <p>I&#8217;m really excited about <a href="http://textileit.com">Textile</a>.  I
-      love it so much, I think I&#8217;ll name my first child <a href="http://textileit.com">Textile</a>.</p>
+    input: |-
+      I'm really excited about "Textile":textile.  I love it so much, I think I'll name my first child "Tex":textile.
+      
+      [textile]http://textileit.com
+    output: <p>I&#8217;m really excited about <a href="http://textileit.com">Textile</a>.  I love it so much, I think I&#8217;ll name my first child <a href="http://textileit.com">Textile</a>.</p>
   Link attributes:
     desc: Link "attributes":../attributes can be specified at the beginning of the
       link text followed by a period and space.
