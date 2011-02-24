@@ -132,8 +132,8 @@ Definition lists:
       for baby cows.</p>\n<p>Cold drink that goes great with cookies.</p></dd>\n</dl>"
 Footnotes:
   Footnotes:
-    desc: "To reference a footnote, place the footnote number in square brackets.
-      Don't forget the corresponding footnote at the bottom of the page."
+    desc: To reference a footnote, place the footnote number in square brackets.
+      Don't forget the corresponding footnote at the bottom of the page.
     input: |-
       42.7% of all statistics are made up on the spot.[1]
 
@@ -172,7 +172,10 @@ Tables:
     output: "<table id=\"prices\">\n\t<tr>\n\t\t<td>Adults</td>\n\t\t<td>$5</td>\n\t</tr>\n\t<tr>\n\t\t<td>Children</td>\n\t\t<td>$2</td>\n\t</tr>\n</table>"
 Divisions:
   Divisions:
-    desc: |-
-      @DIV@ tags are used to define a division or section in an HTML document.  It has no inherent meaning, but is often used by designers and developers to group or style part of a page differently than another.  You can easily create a @div@ with Textile but most people who need a @div@ just use "HTML tags":/textile/html-integration-and-escapement/#block-html in their Textile.
+    desc: '@DIV@ tags are used to define a division or section in an HTML document.  It
+      has no inherent meaning, but is often used by designers and developers to
+      group or style part of a page differently than another.  You can easily create
+      a @div@ with Textile but most people who need a @div@ just use "HTML tags":/textile/html-integration-and-escapement/#block-html
+      in their Textile.'
     input: div. A simple div.
     output: <div>A simple div.</div>

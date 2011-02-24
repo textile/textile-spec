@@ -3,31 +3,28 @@ CSS classes and IDs:
     desc: You can apply CSS classes and IDs to phrase modifiers or block modifiers.
     input: p(my-class). This is a paragraph that has a class and this *(#special-phrase)emphasized
       phrase* has an id.
-    output: |-
-      <p class="my-class">This is a paragraph that has a class and this <strong id="special-phrase">emphasized phrase</strong> has an id.</p>
+    output: <p class="my-class">This is a paragraph that has a class and this <strong
+      id="special-phrase">emphasized phrase</strong> has an id.</p>
   CSS IDs:
     desc: ''
     input: p(#my-paragraph). This is a paragraph that has an id.
-    output: |-
-      <p id="my-paragraph">This is a paragraph that has an id.</p>
+    output: <p id="my-paragraph">This is a paragraph that has an id.</p>
   CSS classes and IDs combined:
     desc: You can specify both class and ID, but the class must always come first.
     input: div(myclass#myid). This div has both a CSS class and ID.
-    output: |-
-      <div class="myclass" id="myid">This div has both a <span class="caps">CSS</span> class and ID.</div>
+    output: <div class="myclass" id="myid">This div has both a <span class="caps">CSS</span>
+      class and ID.</div>
 CSS styles:
   CSS styles:
     desc: Apply CSS styles directly to block or phrase modifiers by putting the
       style rules in curly braces.
     input: p{color:blue;letter-spacing:.5em}. Spacey blue
-    output: |-
-      <p style="color:blue;letter-spacing:.5em;">Spacey blue</p>
+    output: <p style="color:blue;letter-spacing:.5em;">Spacey blue</p>
 Language:
   Language:
     desc: Specify the language of text with square brackets.
     input: p[fr]. Parlez-vous français ?
-    output: |-
-      <p lang="fr">Parlez-vous français ?</p>
+    output: <p lang="fr">Parlez-vous français ?</p>
 Alignment:
   Alignment:
     desc: 'Text inside blocks can be aligned in four ways:'

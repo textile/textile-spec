@@ -2,13 +2,13 @@ Strong importance:
   Strong importance:
     desc: Strong importance can be given to the text by surrounding it with asterisks.  The
       strong text is commonly styled as **bold**.
-    input: "Don't *ever* pull this lever."
+    input: Don't *ever* pull this lever.
     output: <p>Don&#8217;t <strong>ever</strong> pull this lever.</p>
 Stress emphasis:
   Stress emphasis:
     desc: To add emphasis to a stressed word or phrase, surround it with underscores.  Emphasized
       text is typically styled as __italics__.
-    input: "You didn't actually _believe_ her, did you?"
+    input: You didn't actually _believe_ her, did you?
     output: <p>You didn&#8217;t actually <em>believe</em> her, did you?</p>
 Stylistic offset:
   Stylistic offset:
@@ -41,7 +41,7 @@ Citation:
       in traditional style guides) by surrounding it with two question marks on
       either side. This can be a work that is being quoted or referenced in detail
       (i.e. a citation), or it can just be a work that is mentioned in passing.
-    input: "My wife's favorite book is ??The Count of Monte Cristo?? by Dumas."
+    input: My wife's favorite book is ??The Count of Monte Cristo?? by Dumas.
     output: <p>My wife&#8217;s favorite book is <cite>The Count of Monte Cristo</cite>
       by Dumas.</p>
 Insertions and deletions:
@@ -52,9 +52,9 @@ Insertions and deletions:
     output: <p>The news networks declared <del>Al Gore</del> <ins>George W. Bush</ins>
       the winner in Florida.</p>
   Explicit insertion and deletion:
-    desc: "If your insertion or deletion isn't being recognized or is being confused
+    desc: If your insertion or deletion isn't being recognized or is being confused
       with another modifier, you can make it more explicit by surrounding it with
-      square brackets."
+      square brackets.
     input: '[-this was deleted-][+this was added+] to the paragraph'
     output: <p><del>this was deleted</del><ins>this was added</ins> to the paragraph</p>
 Superscript and subscript:
@@ -73,24 +73,21 @@ Links:
   Links:
     desc: Links have the text of the link in quotes, followed by a colon and the
       URL.
-    input: |-
-      Learn more "about the company":/about and our "board of directors":../about#board.
-    output: |-
-      <p>Learn more <a href="/about">about the company</a> and our <a href="../about#board">board of directors</a>.</p>
+    input: Learn more "about the company":/about and our "board of directors":../about#board.
+    output: <p>Learn more <a href="/about">about the company</a> and our <a href="../about#board">board
+      of directors</a>.</p>
   Link title:
     desc: |-
       A title may be placed in parentheses at the end of the link text.  Link titles help users predict where they are going.  "Jakob Nielsen(Nielsen's guidelines for link titles)":http://www.useit.com/alertbox/980111.html recommends you use them sparingly and not assume the user will see them at all.
-    input: |-
-      Visit our "parent company (Example Corporation)":http://example.com.
-    output: |-
-      <p>Visit our <a href="http://example.com" title="Example Corporation">parent company</a>.</p>
+    input: Visit our "parent company (Example Corporation)":http://example.com.
+    output: <p>Visit our <a href="http://example.com" title="Example Corporation">parent
+      company</a>.</p>
   Bracketed link:
-    desc: "When the link isn't surrounded by spaces or punctuation, or when the
-      URL ending may be ambiguous, surround the link with square brackets."
-    input: |-
-      This is a link to a ["Wikipedia article about Textile":http://en.wikipedia.org/wiki/Textile_(markup_language)].
-    output: |-
-      <p>This is a link to a <a href="http://en.wikipedia.org/wiki/Textile_(markup_language)">Wikipedia article about Textile</a>.</p>
+    desc: When the link isn't surrounded by spaces or punctuation, or when the URL
+      ending may be ambiguous, surround the link with square brackets.
+    input: This is a link to a ["Wikipedia article about Textile":http://en.wikipedia.org/wiki/Textile_(markup_language)].
+    output: <p>This is a link to a <a href="http://en.wikipedia.org/wiki/Textile_(markup_language)">Wikipedia
+      article about Textile</a>.</p>
   Link alias:
     desc: If you link to a URL repeatedly, you can replace the URL with a link alias
       defined elsewhere in the Textile document.
@@ -98,24 +95,23 @@ Links:
       I'm really excited about "RedCloth":redcloth.  I love it so much, I think I'll name my first child "RedCloth":redcloth.
 
       [redcloth]http://redcloth.org
-    output: |-
-      <p>I&#8217;m really excited about <a href="http://redcloth.org">RedCloth</a>.  I love it so much, I think I&#8217;ll name my first child <a href="http://redcloth.org">RedCloth</a>.</p>
+    output: <p>I&#8217;m really excited about <a href="http://redcloth.org">RedCloth</a>.  I
+      love it so much, I think I&#8217;ll name my first child <a href="http://redcloth.org">RedCloth</a>.</p>
   Link attributes:
-    desc: |-
-      Link "attributes":../attributes can be specified at the beginning of the link text followed by a period and space.
-    input: |-
-      "(my-class). This is a link with class":http://redcloth.org
-    output: |-
-      <p><a href="http://redcloth.org" class="my-class">This is a link with class</a></p>
+    desc: Link "attributes":../attributes can be specified at the beginning of the
+      link text followed by a period and space.
+    input: '"(my-class). This is a link with class":http://redcloth.org'
+    output: <p><a href="http://redcloth.org" class="my-class">This is a link with
+      class</a></p>
 Images:
   Images:
     desc: Include an image by surrounding its URL with exclamation marks.  Alt text
       can be provided in parentheses.
     input: '!http://www.w3.org/Icons/valid-html401(This page is valid HTML)!'
-    output: |-
-      <p><img src="http://www.w3.org/Icons/valid-html401" title="This page is valid HTML" alt="This page is valid HTML" /></p>
+    output: <p><img src="http://www.w3.org/Icons/valid-html401" title="This page
+      is valid HTML" alt="This page is valid HTML" /></p>
   Image links:
     desc: Images can be linked by putting a colon and the link URL after the image.
     input: '!http://www.w3.org/Icons/valid-html401!:http://validator.w3.org/check?uri=referer'
-    output: |-
-      <p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="" /></a></p>
+    output: <p><a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401"
+      alt="" /></a></p>

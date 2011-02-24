@@ -20,8 +20,7 @@ Simple paragraphs:
       <p>This is another.</p>
 Line breaks:
   Line breaks:
-    desc: "Lines that don't have a blank line in between are part of the same
-      paragraph."
+    desc: Lines that don't have a blank line in between are part of the same paragraph.
     input: |-
       Roses are red,
       Violets are blue,
@@ -33,7 +32,7 @@ Line breaks:
       I&#8217;d like a sandwich;<br />
       Perhaps even two.</p>
   Line breaks in code:
-    desc: "Line breaks in preformatted sections don't become HTML breaks."
+    desc: Line breaks in preformatted sections don't become HTML breaks.
     input: |-
       <pre>
       Mirror mirror
@@ -44,8 +43,8 @@ Line breaks:
       Mirror mirror
       on the wall...
       </pre>
-! "Typographer's quotes":
-  ! "Typographer's quotes":
+Typographer's quotes:
+  Typographer's quotes:
     desc: |-
       Straight quotation marks are converted into <abbr title='a.k.a. "curly quotes"'>typographer's quotes</abbr>, which are easier on the eyes.
     input: |-
@@ -53,7 +52,7 @@ Line breaks:
     output: <p>&#8220;I said, &#8216;hold the mayo&#8217; twice!&#8221;</p>
   Curly apostrophes:
     desc: Apostrophes are also made curly.
-    input: "We went to Steven's mother's house for a party."
+    input: We went to Steven's mother's house for a party.
     output: <p>We went to Steven&#8217;s mother&#8217;s house for a party.</p>
 Dashes:
   Dashes:
@@ -84,8 +83,8 @@ Ellipses:
   Ellipses without leading space:
     desc: Consult your style manual for proper use of ellipses in conjunction with
       spaces and other punctuation.
-    input: |-
-      "Four score and seven years ago our fathers brought forth...a new nation...dedicated to the proposition that all men are created equal...."
+    input: '"Four score and seven years ago our fathers brought forth...a new
+      nation...dedicated to the proposition that all men are created equal...."'
     output: <p>&#8220;Four score and seven years ago our fathers brought forth&#8230;a
       new nation&#8230;dedicated to the proposition that all men are created equal&#8230;.&#8221;</p>
 Dimension sign:
@@ -107,21 +106,22 @@ Registered, trademark, and copyright symbols:
   Registered, trademark, and copyright symbols:
     desc: The copyright, registered, and trademark symbols can be produced by placing
       the letters in parentheses.
-    input: |-
-      RegisteredTrademark(r), Trademark(tm), and Copyright (c) <r:date format="%Y" />
-    output: |-
-      <p>RegisteredTrademark&#174;, Trademark&#8482;, and Copyright &#169; <r:date format="%Y" /></p>
+    input: RegisteredTrademark(r), Trademark(tm), and Copyright (c) <r:date format="%Y"
+      />
+    output: <p>RegisteredTrademark&#174;, Trademark&#8482;, and Copyright &#169;
+      <r:date format="%Y" /></p>
 Acronyms:
   Acronyms:
     desc: You can provide the definition for acronyms inside parentheses.
     input: The EPA(Environmental Protection Agency) is measuring GHG(greenhouse
       gas) emissions.
-    output: |-
-      <p>The <acronym title="Environmental Protection Agency"><span class="caps">EPA</span></acronym> is measuring <acronym title="greenhouse gas"><span class="caps">GHG</span></acronym> emissions.</p>
+    output: <p>The <acronym title="Environmental Protection Agency"><span class="caps">EPA</span></acronym>
+      is measuring <acronym title="greenhouse gas"><span class="caps">GHG</span></acronym>
+      emissions.</p>
 Uppercase:
   Uppercase:
     desc: Uppercase words are enclosed in a span element that can be styled to your
       liking.  Administrators can disable this feature with @:no_span_caps@.
     input: Many NASDAQ companies are ISO certified.
-    output: |-
-      <p>Many <span class="caps">NASDAQ</span> companies are <span class="caps">ISO</span> certified.</p>
+    output: <p>Many <span class="caps">NASDAQ</span> companies are <span class="caps">ISO</span>
+      certified.</p>
