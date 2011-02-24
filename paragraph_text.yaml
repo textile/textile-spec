@@ -18,6 +18,10 @@ Simple paragraphs:
     output: |-
       <p>This is one paragraph.</p>
       <p>This is another.</p>
+  :capital_p:
+    desc: A capital P abbreviation may start the sentence.
+    input: "P. T. Barnum was a U.S. Showman"
+    output: "<p>P. T. Barnum was a U.S. Showman</p>"
 Line breaks:
   Line breaks:
     desc: Lines that don't have a blank line in between are part of the same paragraph.
