@@ -1,102 +1,127 @@
 Simple paragraphs:
   Simple paragraphs:
+    desc: Paragraphs are separated by a blank line.
     input: |-
       This is a paragraph.
-      
+
       This is another paragraph
-    desc: Paragraphs are separated by a blank line.
+    output: |-
+      <p>This is a paragraph.</p>
+      <p>This is another paragraph</p>
   Explicit paragraphs:
+    desc: You can explicitly identify a paragraph with [@p. @] (p-period-space)
+      before the paragraph.
     input: |-
       p. This is one paragraph.
-      
+
       p. This is another.
-    desc: "You can explicitly identify a paragraph with [@p. @] (p-period-space) before the paragraph."
-  :capital_p:
-    desc: A capital P abbreviation may start the sentence.
-    input: "P. T. Barnum was a U.S. Showman"
-    output: "<p>P. T. Barnum was a U.S. Showman</p>"
+    output: |-
+      <p>This is one paragraph.</p>
+      <p>This is another.</p>
 Line breaks:
   Line breaks:
-    input: ! 'Roses are red,
+    desc: "Lines that don't have a blank line in between are part of the same
+      paragraph."
+    input: |-
+      Roses are red,
       Violets are blue,
-      I''d like a sandwich;
-      Perhaps even two.'
-    desc: <p>Lines that don&#8217;t have a blank line in between are part of the same paragraph.</p>
+      I'd like a sandwich;
+      Perhaps even two.
+    output: |-
+      <p>Roses are red,<br />
+      Violets are blue,<br />
+      I&#8217;d like a sandwich;<br />
+      Perhaps even two.</p>
   Line breaks in code:
-    input: ! '<pre>
-
+    desc: "Line breaks in preformatted sections don't become HTML breaks."
+    input: |-
+      <pre>
       Mirror mirror
-
       on the wall...
-
-      </pre>'
-    desc: <p>Line breaks in preformatted sections don&#8217;t become <span class="caps">HTML</span>
-      breaks.</p>
-Typographer's quotes:
-  Typographer's quotes:
-    input: ! '"I said, ''hold the mayo'' twice!"'
-    desc: <p>Straight quotation marks are converted into <abbr title='a.k.a. "curly
-      quotes"'>typographer&#8217;s quotes</abbr>, which are easier on the eyes.</p>
+      </pre>
+    output: |-
+      <pre>
+      Mirror mirror
+      on the wall...
+      </pre>
+! "Typographer's quotes":
+  ! "Typographer's quotes":
+    desc: |-
+      Straight quotation marks are converted into <abbr title='a.k.a. "curly quotes"'>typographer's quotes</abbr>, which are easier on the eyes.
+    input: |-
+      "I said, 'hold the mayo' twice!"
+    output: <p>&#8220;I said, &#8216;hold the mayo&#8217; twice!&#8221;</p>
   Curly apostrophes:
-    input: We went to Steven's mother's house for a party.
-    desc: <p>Apostrophes are also made curly.</p>
+    desc: Apostrophes are also made curly.
+    input: "We went to Steven's mother's house for a party."
+    output: <p>We went to Steven&#8217;s mother&#8217;s house for a party.</p>
 Dashes:
   Dashes:
+    desc: Single hyphens between words become en dashes; double hyphens become em
+      dashes.  Hyphenated words are left alone.
     input: I could be happy--fantastically happy--on twenty-one thousand a year
       if I only had to work 9 am - 1 pm.
-    desc: <p>Single hyphens between words become en dashes; double hyphens become
-      em dashes.  Hyphenated words are left alone.</p>
+    output: <p>I could be happy&#8212;fantastically happy&#8212;on twenty-one thousand
+      a year if I only had to work 9 am &#8211; 1 pm.</p>
   En dash must have spaces:
+    desc: A dash, when it appears between words, must be surrounded by spaces.
     input: June - July 1967
-    desc: <p>A dash, when it appears between words, must be surrounded by spaces.</p>
+    output: <p>June &#8211; July 1967</p>
   Em dash spaces optional:
+    desc: |-
+      Em dashes may be set open or closed.
+
+      bq.:http://en.wikipedia.org/wiki/Dash#Em_dash According to most American sources (e.g., "The Chicago Manual of Style":http://en.wikipedia.org/wiki/The_Chicago_Manual_of_Style) and to some British sources (e.g., "The Oxford Guide to Style":http://en.wikipedia.org/wiki/Hart%27s_Rules), an em dash should always be set closed (not surrounded by spaces). But the practice in many parts of the English-speaking world, also the style recommended by "The New York Times Manual of Style and Usage":http://en.wikipedia.org/wiki/The_New_York_Times_Manual_of_Style_and_Usage, sets it open (separates it from its surrounding words by using spaces) when it is being used parenthetically.
     input: Please use the em dash closed--or open if you must -- but I prefer it
       closed.
-    desc: ! '<p>Em dashes may be set open or closed.</p>
-
-      <blockquote cite="http://en.wikipedia.org/wiki/Dash#Em_dash">
-
-      <p>According to most American sources (e.g., <a href="http://en.wikipedia.org/wiki/The_Chicago_Manual_of_Style">The
-      Chicago Manual of Style</a>) and to some British sources (e.g., <a href="http://en.wikipedia.org/wiki/Hart%27s_Rules">The
-      Oxford Guide to Style</a>), an em dash should always be set closed (not surrounded
-      by spaces). But the practice in many parts of the English-speaking world,
-      also the style recommended by <a href="http://en.wikipedia.org/wiki/The_New_York_Times_Manual_of_Style_and_Usage">The
-      New York Times Manual of Style and Usage</a>, sets it open (separates it from
-      its surrounding words by using spaces) when it is being used parenthetically.</p>
-
-      </blockquote>'
+    output: <p>Please use the em dash closed&#8212;or open if you must &#8212; but
+      I prefer it closed.</p>
 Ellipses:
   Ellipses:
+    desc: Three periods become the ellipsis character.
     input: He thought and thought ... and then thought some more.
-    desc: <p>Three periods become the ellipsis character.</p>
+    output: <p>He thought and thought &#8230; and then thought some more.</p>
   Ellipses without leading space:
-    input: ! '"Four score and seven years ago our fathers brought forth...a new
-      nation...dedicated to the proposition that all men are created equal...."'
-    desc: <p>Consult your style manual for proper use of ellipses in conjunction
-      with spaces and other punctuation.</p>
+    desc: Consult your style manual for proper use of ellipses in conjunction with
+      spaces and other punctuation.
+    input: |-
+      "Four score and seven years ago our fathers brought forth...a new nation...dedicated to the proposition that all men are created equal...."
+    output: <p>&#8220;Four score and seven years ago our fathers brought forth&#8230;a
+      new nation&#8230;dedicated to the proposition that all men are created equal&#8230;.&#8221;</p>
 Dimension sign:
   Dimension sign:
+    desc: The lowercase letter x between numbers becomes a dimension sign.
     input: 4 x 4 = 16
-    desc: <p>The lowercase letter x between numbers becomes a dimension sign.</p>
+    output: <p>4 &#215; 4 = 16</p>
   Dimension with quotes:
-    input: My office measures 5' x 5'6".
-    desc: <p>In Textile, quotes may be applied to the dimensions to represent feet
-      and inches.</p>
+    desc: In RedCloth, quotes may be applied to the dimensions to represent feet
+      and inches.
+    input: |-
+      My office measures 5' x 5'6".
+    output: <p>My office measures 5&#8242; &#215; 5&#8242;6&quot;.</p>
   Dimension spaces optional:
+    desc: Spaces between the numbers and the x are optional.
     input: 4x4=16
-    desc: <p>Spaces between the numbers and the x are optional.</p>
+    output: <p>4&#215;4=16</p>
 Registered, trademark, and copyright symbols:
   Registered, trademark, and copyright symbols:
-    input: RegisteredTrademark(r), Trademark(tm), and Copyright (c) 2008
-    desc: <p>The copyright, registered, and trademark symbols can be produced by
-      placing the letters in parentheses.</p>
+    desc: The copyright, registered, and trademark symbols can be produced by placing
+      the letters in parentheses.
+    input: |-
+      RegisteredTrademark(r), Trademark(tm), and Copyright (c) <r:date format="%Y" />
+    output: |-
+      <p>RegisteredTrademark&#174;, Trademark&#8482;, and Copyright &#169; <r:date format="%Y" /></p>
 Acronyms:
   Acronyms:
+    desc: You can provide the definition for acronyms inside parentheses.
     input: The EPA(Environmental Protection Agency) is measuring GHG(greenhouse
       gas) emissions.
-    desc: <p>You can provide the definition for acronyms inside parentheses.</p>
+    output: |-
+      <p>The <acronym title="Environmental Protection Agency"><span class="caps">EPA</span></acronym> is measuring <acronym title="greenhouse gas"><span class="caps">GHG</span></acronym> emissions.</p>
 Uppercase:
   Uppercase:
+    desc: Uppercase words are enclosed in a span element that can be styled to your
+      liking.  Administrators can disable this feature with @:no_span_caps@.
     input: Many NASDAQ companies are ISO certified.
-    desc: <p>Uppercase words are enclosed in a span element that can be styled to
-      your liking.  Administrators can disable this feature with <code>:no_span_caps</code>.</p>
+    output: |-
+      <p>Many <span class="caps">NASDAQ</span> companies are <span class="caps">ISO</span> certified.</p>

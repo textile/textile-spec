@@ -1,161 +1,178 @@
 Headings:
   Headings:
-    input: ! 'h1. This is a Heading 1
-
+    desc: Headings convey a hierarchy of information on the page.  They structure
+      the document like an outline. Heading 1 is the most important or general and
+      Heading 6 is the least important or most specific.  Leave a blank line after
+      every heading.
+    input: |-
+      h1. This is a Heading 1
 
       This might be an introductory paragraph on the general topic.
 
-
       h2. Heading 2 gets more specific
 
-
-      Now we''re getting into the details.'
-    desc: <p>Headings convey a hierarchy of information on the page.  They structure
-      the document like an outline. Heading 1 is the most important or general and
-      Heading 6 is the least important or most specific.  Leave a blank line after
-      every heading.</p>
+      Now we're getting into the details.
+    output: |-
+      <h1>This is a Heading 1</h1>
+      <p>This might be an introductory paragraph on the general topic.</p>
+      <h2>Heading 2 gets more specific</h2>
+      <p>Now we&#8217;re getting into the details.</p>
 Block quotations:
   Block quotations:
-    input: ! 'Even Mr. Sedaris, a noted luddite, has finally succumbed to doing
-      his writing on a computer.  The Internet, however, remains an idiotic trifle:
+    desc: Block quotations designate long quotations where a paragraph break is
+      appropriate.  It ends with a blank line.
+    input: |-
+      Even Mr. Sedaris, a noted luddite, has finally succumbed to doing his writing on a computer.  The Internet, however, remains an idiotic trifle:
 
+      bq. I've never seen the Internet. I don't have email. I just enjoy lying on the couch and reading a magazine. When people say, "You should visit my Web page," I'm always perplexed by it. Why? What do you do there?
 
-      bq. I''ve never seen the Internet. I don''t have email. I just enjoy lying
-      on the couch and reading a magazine. When people say, "You should visit my
-      Web page," I''m always perplexed by it. Why? What do you do there?
-
-
-      Haven''t we all pondered that at one time or another?'
-    desc: <p>Block quotations designate long quotations where a paragraph break
-      is appropriate.  It ends with a blank line.</p>
+      Haven't we all pondered that at one time or another?
+    output: |-
+      <p>Even Mr. Sedaris, a noted luddite, has finally succumbed to doing his writing on a computer.  The Internet, however, remains an idiotic trifle:</p>
+      <blockquote>
+      <p>I&#8217;ve never seen the Internet. I don&#8217;t have email. I just enjoy lying on the couch and reading a magazine. When people say, &#8220;You should visit my Web page,&#8221; I&#8217;m always perplexed by it. Why? What do you do there?</p>
+      </blockquote>
+      <p>Haven&#8217;t we all pondered that at one time or another?</p>
   Citing block quotations:
-    input: ! 'A standard Lorem Ipsum passage has been used since the 1500s:
+    desc: Block quotations may include a citation URL(Uniform Resource Locator)
+      immediately following the period.
+    input: |-
+      A standard Lorem Ipsum passage has been used since the 1500s:
 
-
-      bq.:http://www.lipsum.com/ Lorem ipsum dolor sit amet, consectetur adipisicing
-      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-    desc: <p>Block quotations may include a citation <acronym title="Uniform Resource
-      Locator"><span class="caps">URL</span></acronym> immediately following the
-      period.</p>
+      bq.:http://www.lipsum.com/ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    output: |-
+      <p>A standard Lorem Ipsum passage has been used since the 1500s:</p>
+      <blockquote cite="http://www.lipsum.com/">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </blockquote>
   Extended block quotations:
-    input: ! 'bq.. This is one paragraph.
-
+    desc: If your block quotation needs to go on for more than one paragraph, use
+      two periods.  The block quotation ends when a paragraph of a different type
+      (such as an explicit paragraph or a header) is encountered.
+    input: |-
+      bq.. This is one paragraph.
 
       Another paragraph, also part of the quote.
 
-
-      p. A normal paragraph ends the quote.'
-    desc: <p>If your block quotation needs to go on for more than one paragraph,
-      use two periods.  The block quotation ends when a paragraph of a different
-      type (such as an explicit paragraph or a header) is encountered.</p>
+      p. A normal paragraph ends the quote.
+    output: |-
+      <blockquote>
+      <p>This is one paragraph.</p>
+      <p>Another paragraph, also part of the quote.</p>
+      </blockquote>
+      <p>A normal paragraph ends the quote.</p>
 Bullet lists:
   Bullet lists:
-    input: ! 'Textile has several advantages over HTML:
+    desc: Make a bullet list with asterisks.  Use more asterisks to make nested
+      lists.
+    input: |-
+      Textile has several advantages over HTML:
 
-
-      * It''s easier on the eyes
-
-      * You don''t have to write all those HTML tags
-
-      ** By not writing the tags yourself, you''re less likely to make coding mistakes
-
+      * It's easier on the eyes
+      * You don't have to write all those HTML tags
+      ** By not writing the tags yourself, you're less likely to make coding mistakes
       ** It requires fewer keystrokes
-
-      *** You don''t wear out the keys on your keyboard as fast
-
-      *** You won''t wear out your fingers as fast
-
-      * You can write it much quicker'
-    desc: <p>Make a bullet list with asterisks.  Use more asterisks to make nested
-      lists.</p>
+      *** You don't wear out the keys on your keyboard as fast
+      *** You won't wear out your fingers as fast
+      * You can write it much quicker
+    output: "<p>Textile has several advantages over <span class=\"caps\">HTML</span>:</p>\n<ul>\n\t<li>It&#8217;s
+      easier on the eyes</li>\n\t<li>You don&#8217;t have to write all those <span
+      class=\"caps\">HTML</span> tags\n\t<ul>\n\t\t<li>By not writing the tags yourself,
+      you&#8217;re less likely to make coding mistakes</li>\n\t\t<li>It requires
+      fewer keystrokes\n\t\t<ul>\n\t\t\t<li>You don&#8217;t wear out the keys on
+      your keyboard as fast</li>\n\t\t\t<li>You won&#8217;t wear out your fingers
+      as fast</li>\n\t\t</ul></li>\n\t</ul></li>\n\t<li>You can write it much quicker</li>\n</ul>"
 Numbered lists:
   Numbered lists:
-    input: ! 'How to make a PB&J:
-
+    desc: Start each item in your numbered list with a number sign.  For nested
+      lists, use more number signs.
+    input: |-
+      How to make a PB&J:
 
       # Gather bread, peanut butter, and jelly
-
       # Slice the bread if necessary
-
       # Assemble the sandwich
-
       ## Spread peanut butter on one slice of bread
-
       ## Put jelly on another slice
-
       ## Put the two slices together
-
-      # Enjoy'
-    desc: <p>Start each item in your numbered list with a number sign.  For nested
-      lists, use more number signs.</p>
+      # Enjoy
+    output: "<p>How to make a PB&amp;J:</p>\n<ol>\n\t<li>Gather bread, peanut
+      butter, and jelly</li>\n\t<li>Slice the bread if necessary</li>\n\t<li>Assemble
+      the sandwich\n\t<ol>\n\t\t<li>Spread peanut butter on one slice of bread</li>\n\t\t<li>Put
+      jelly on another slice</li>\n\t\t<li>Put the two slices together</li>\n\t</ol></li>\n\t<li>Enjoy</li>\n</ol>"
 Mixed nested lists:
   Mixed nested lists:
-    input: ! 'Three reasons to walk to work:
-
+    desc: You can nest ordered lists inside unordered lists and vice-versa.
+    input: |-
+      Three reasons to walk to work:
 
       # It saves fuel
-
-      # It''s good for your health
-
+      # It's good for your health
       ** Walking burns calories
-
       ** Time outside means lower stress
-
-      # It''s good for the environment'
-    desc: <p>You can nest ordered lists inside unordered lists and vice-versa.</p>
+      # It's good for the environment
+    output: "<p>Three reasons to walk to work:</p>\n<ol>\n\t<li>It saves fuel</li>\n\t<li>It&#8217;s
+      good for your health\n\t<ul>\n\t\t<li>Walking burns calories</li>\n\t\t<li>Time
+      outside means lower stress</li>\n\t</ul></li>\n\t<li>It&#8217;s good for the
+      environment</li>\n</ol>"
 Definition lists:
   Definition lists:
-    input: ! '- coffee := Hot and black
-
+    desc: Each term in a definition list starts with a dash.  Put a @:=@ between
+      the term and the definition.  If your definition spans multiple lines, end
+      the definition with @=:@
+    input: |-
+      - coffee := Hot and black
       - tea := Also hot, but a little less black
-
       - milk :=
-
       Nourishing beverage for baby cows.
 
-
-      Cold drink that goes great with cookies. =:'
-    desc: <p>Each term in a definition list starts with a dash.  Put a <code>:=</code>
-      between the term and the definition.  If your definition spans multiple lines,
-      end the definition with <code>=:</code></p>
+      Cold drink that goes great with cookies. =:
+    output: "<dl>\n\t<dt>coffee</dt>\n\t<dd>Hot and black</dd>\n\t<dt>tea</dt>\n\t<dd>Also
+      hot, but a little less black</dd>\n\t<dt>milk</dt>\n\t<dd><p>Nourishing beverage
+      for baby cows.</p>\n<p>Cold drink that goes great with cookies.</p></dd>\n</dl>"
 Footnotes:
   Footnotes:
-    input: ! '42.7% of all statistics are made up on the spot.[1]
+    desc: "To reference a footnote, place the footnote number in square brackets.
+      Don't forget the corresponding footnote at the bottom of the page."
+    input: |-
+      42.7% of all statistics are made up on the spot.[1]
 
-
-      fn1. "Dr. Katz":http://en.wikiquote.org/wiki/Steven_Wright'
-    desc: <p>To reference a footnote, place the footnote number in square brackets.
-      Don&#8217;t forget the corresponding footnote at the bottom of the page.</p>
+      fn1. "Dr. Katz":http://en.wikiquote.org/wiki/Steven_Wright
+    output: |-
+      <p>42.7% of all statistics are made up on the spot.<sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup></p>
+      <p class="footnote" id="fn1"><a href="#fnr1"><sup>1</sup></a> <a href="http://en.wikiquote.org/wiki/Steven_Wright">Dr. Katz</a></p>
 Tables:
   Tables:
-    input: ! '|_. name|_. age|
-
+    desc: Simple tables are made by separating each cell with vertical pipes.  Begin
+      the cell with @_.@ to indicate the cell is a heading.
+    input: |-
+      |_. name|_. age|
       |Walter|5|
-
-      |Florence|6|'
-    desc: <p>Simple tables are made by separating each cell with vertical pipes.  Begin
-      the cell with <code>_.</code> to indicate the cell is a heading.</p>
+      |Florence|6|
+    output: "<table>\n\t<tr>\n\t\t<th>name</th>\n\t\t<th>age</th>\n\t</tr>\n\t<tr>\n\t\t<td>Walter</td>\n\t\t<td>5</td>\n\t</tr>\n\t<tr>\n\t\t<td>Florence</td>\n\t\t<td>6</td>\n\t</tr>\n</table>"
   Table cell attributes:
-    input: ! "|{background:#ddd}. Cell with background|Normal|\n|\2. Cell spanning
+    desc: You can make a table cell span rows or columns with a slash or backslash
+      and the number to span.  Classes, IDs, style, and alignment are also possible
+      on table cells as with other elements.
+    input: "|{background:#ddd}. Cell with background|Normal|\n|\x02. Cell spanning
       2 columns|\n|/2. Cell spanning 2 rows|one|\n|two|\n|>. Right-aligned cell|<.
       Left-aligned cell|"
-    desc: <p>You can make a table cell span rows or columns with a slash or backslash
-      and the number to span.  Classes, IDs, style, and alignment are also possible
-      on table cells as with other elements.</p>
+    output: "<table>\n\t<tr>\n\t\t<td style=\"background:#ddd;\">Cell with background</td>\n\t\t<td>Normal</td>\n\t</tr>\n\t<tr>\n\t\t<td
+      colspan=\"2\">Cell spanning 2 columns</td>\n\t</tr>\n\t<tr>\n\t\t<td rowspan=\"2\">Cell
+      spanning 2 rows</td>\n\t\t<td>one</td>\n\t</tr>\n\t<tr>\n\t\t<td>two</td>\n\t</tr>\n\t<tr>\n\t\t<td
+      style=\"text-align:right;\">Right-aligned cell</td>\n\t\t<td style=\"text-align:left;\">Left-aligned
+      cell</td>\n\t</tr>\n</table>"
   Table attributes:
-    input: ! 'table(#prices).
-
+    desc: 'To apply attributes to the entire table, use the @table.@ signature
+      on a line by itself before the table data. '
+    input: |-
+      table(#prices).
       |Adults|$5|
-
-      |Children|$2|'
-    desc: <p>To apply attributes to the entire table, use the <code>table.</code>
-      signature on a line by itself before the table data.</p>
+      |Children|$2|
+    output: "<table id=\"prices\">\n\t<tr>\n\t\t<td>Adults</td>\n\t\t<td>$5</td>\n\t</tr>\n\t<tr>\n\t\t<td>Children</td>\n\t\t<td>$2</td>\n\t</tr>\n</table>"
 Divisions:
   Divisions:
+    desc: |-
+      @DIV@ tags are used to define a division or section in an HTML document.  It has no inherent meaning, but is often used by designers and developers to group or style part of a page differently than another.  You can easily create a @div@ with Textile but most people who need a @div@ just use "HTML tags":/textile/html-integration-and-escapement/#block-html in their Textile.
     input: div. A simple div.
-    desc: <p><code>DIV</code> tags are used to define a division or section in an
-      <span class="caps">HTML</span> document.  It has no inherent meaning, but
-      is often used by designers and developers to group or style part of a page
-      differently than another.  You can easily create a <code>div</code> with Textile
-      but most people who need a <code>div</code> just use <a href="/textile/html-integration-and-escapement/#block-html"><span
-      class="caps">HTML</span> tags</a> in their Textile.</p>
+    output: <div>A simple div.</div>

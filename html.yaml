@@ -1,111 +1,130 @@
 HTML spans:
   HTML spans:
+    desc: |-
+      You can enclose a bit of text in an HTML span tag by enclosing it in percent signs.  Then you can apply attributes to the span (see "attributes":/textile/attributes).
     input: I can put in a %(myclass)span with a class% like this.
-    desc: <p>You can enclose a bit of text in an <span class="caps">HTML</span>
-      span tag by enclosing it in percent signs.  Then you can apply attributes
-      to the span (see <a href="/textile/attributes">attributes</a>).</p>
+    output: |-
+      <p>I can put in a <span class="myclass">span with a class</span> like this.</p>
 Inline code:
   Inline code:
-    input: On the command line, you can just type @bash@.
-    desc: <p>To mark code in your text, surround the code with at signs.</p>
+    desc: To mark code in your text, surround the code with at signs.
+    input: On the command line, you can just type @redcloth@.
+    output: <p>On the command line, you can just type <code>redcloth</code>.</p>
 Block code:
   Block code:
-    input: ! 'bc. # Output "I love Ruby"
-
+    desc: You can insert a block of code with the @bc.@ block signature.
+    input: |-
+      bc. # Output "I love Ruby"
       say = "I love Ruby"
-
-      puts say'
-    desc: <p>You can insert a block of code with the <code>bc.</code> block signature.</p>
+      puts say
+    output: |-
+      <pre><code># Output "I love Ruby"
+      say = "I love Ruby"
+      puts say</code></pre>
   Extended block code:
-    input: ! 'bc.. # Output "I love Ruby"
-
+    desc: Use @bc..@ and the block of code will continue to include blank lines
+      until it encounters another block signature such as @p.@
+    input: |-
+      bc.. # Output "I love Ruby"
       say = "I love Ruby"
-
       puts say
 
-
       # Output "I *LOVE* RUBY"
-
-      say[''love''] = "*love*"
-
+      say['love'] = "*love*"
       puts say.upcase
 
+      p. And that is how you do it.
+    output: |-
+      <pre><code># Output "I love Ruby"
+      say = "I love Ruby"
+      puts say</code>
 
-      p. And that is how you do it.'
-    desc: <p>Use <code>bc..</code> and the block of code will continue to include
-      blank lines until it encounters another block signature such as <code>p.</code></p>
+      <code># Output "I *LOVE* RUBY"
+      say['love'] = "*love*"
+      puts say.upcase</code></pre>
+      <p>And that is how you do it.</p>
 Inline HTML:
   Inline HTML:
-    input: I can use HTML directly in my <span class="youbetcha">Textile</span>.
-    desc: <p>You can use <span class="caps">HTML</span> right in your paragraph
-      text, presuming the site administrator has not set :filter_html or :sanitize_html
-      restrictions.</p>
+    desc: You can use HTML right in your paragraph text, presuming the site administrator
+      has not set :filter_html or :sanitize_html restrictions.
+    input: |-
+      I can use HTML directly in my <span class="youbetcha">Textile</span>.
+    output: |-
+      <p>I can use <span class="caps">HTML</span> directly in my <span class="youbetcha">Textile</span>.</p>
 Block HTML:
   Block HTML:
-    input: ! '<div id="shopping-cart">
-
+    desc: "You can use HTML freely within your RedCloth 4 Textile.  HTML tags
+      on a line by themselves will not be mangled.  Don't forget to leave a blank
+      line after any Textile, just like usual."
+    input: |-
+      <div id="shopping-cart">
       <form action="form_action" method="get">
-
       h3. Your cart
 
-
       * Item one
-
       * Item two
-
 
       <p><input type="submit" value="Check Out" /></p>
 
-
       </form>
-
-      </div>'
-    desc: <p>You can use <span class="caps">HTML</span> freely within your Textile
-      4 Textile.  <span class="caps">HTML</span> tags on a line by themselves will
-      not be mangled.  Don&#8217;t forget to leave a blank line after any Textile,
-      just like usual.</p>
+      </div>
+    output: "<div id=\"shopping-cart\">\n<form action=\"form_action\" method=\"get\">\n<h3>Your
+      cart</h3>\n<ul>\n\t<li>Item one</li>\n\t<li>Item two</li>\n</ul>\n<p><input
+      type=\"submit\" value=\"Check Out\" /></p>\n</form>\n</div>"
 No Textile:
   No Textile:
-    input: ! '<notextile>
-
-      Don''t touch this!
-
+    desc: You can have RedCloth skip a chunk of text with the @<notextile>@ tag
+      or double-equals.
+    input: |-
+      <notextile>
+      Don't touch this!
       </notextile>
 
-
-      Use ==*asterisks*== to say something *strongly*.'
-    desc: <p>You can have Textile skip a chunk of text with the <code>&lt;notextile&gt;</code>
-      tag or double-equals.</p>
+      Use ==*asterisks*== to say something *strongly*.
+    output: |-
+      Don't touch this!
+      <p>Use *asterisks* to say something <strong>strongly</strong>.</p>
   Notextile block:
-    input: ! 'notextile. This has *no* textile formatting, see?
-
+    desc: Notextile can also be used as a normal or extended Textile block.
+    input: |-
+      notextile. This has *no* textile formatting, see?
 
       notextile.. And this notextile block
 
-
       Just keeps going and going.
 
+      p. Until you end it with another block.
+    output: |-
+      This has *no* textile formatting, see?
 
-      p. Until you end it with another block.'
-    desc: <p>Notextile can also be used as a normal or extended Textile block.</p>
+      And this notextile block
+
+      Just keeps going and going.<p>Until you end it with another block.</p>
 Preformatted text:
   Preformatted text:
-    input: ! "pre.      Text in a pre block\nis displayed in a fixed-width\n     font.
+    desc: Preformatted text can be put in a @pre.@ block and its whitespace will
+      be preserved.  @pre.@ is almost identical to @bc.@, except that @<code>...</code>@
+      tags are not used within the @<pre>@ block.
+    input: "pre.      Text in a pre block\nis displayed in a fixed-width\n     font.
       It preserves\n  s p a c e s, line breaks\n     and ascii bunnies.\n           _
       \    _   \n           ` /`/   \n             V /    \n            /. .    \n
       \          = T /=   \n            / ^     \n         {}/\\ //   \n         __
       \" \" /__ \n        (____/^____)"
-    desc: <p>Preformatted text can be put in a <code>pre.</code> block and its whitespace
-      will be preserved.  <code>pre.</code> is almost identical to <code>bc.</code>,
-      except that <code>&lt;code&gt;...&lt;/code&gt;</code> tags are not used within
-      the <code>&lt;pre&gt;</code> block.</p>
+    output: "<pre>     Text in a pre block\nis displayed in a fixed-width\n     font.
+      It preserves\n  s p a c e s, line breaks\n     and ascii bunnies.\n           _
+      \    _   \n           ` /`/   \n             V /    \n            /. .    \n
+      \          = T /=   \n            / ^     \n         {}/\\ //   \n         __
+      \" \" /__ \n        (____/^____)</pre>"
   Extended preformatted:
-    input: ! 'pre.. All monospaced
-
+    desc: Use @pre..@ to make a block of extended preformatted text that continues
+      until it encounters another block signature, like @p.@
+    input: |-
+      pre.. All monospaced
 
       Even the blank lines
 
-
-      p. But now a paragraph'
-    desc: <p>Use <code>pre..</code> to make a block of extended preformatted text
-      that continues until it encounters another block signature, like <code>p.</code></p>
+      p. But now a paragraph
+    output: |-
+      <pre>All monospaced</pre>
+      <pre>Even the blank lines</pre>
+      <p>But now a paragraph</p>
