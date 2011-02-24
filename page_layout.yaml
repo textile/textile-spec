@@ -4,14 +4,9 @@ Headings:
       the document like an outline. Heading 1 is the most important or general and
       Heading 6 is the least important or most specific.  Leave a blank line after
       every heading.
-    input: |-
-      h1. This is a Heading 1
-
-      This might be an introductory paragraph on the general topic.
-
-      h2. Heading 2 gets more specific
-
-      Now we're getting into the details.
+    input: "h1. This is a Heading 1\r\n\r\nThis might be an introductory paragraph
+      on the general topic.\r\n\r\nh2. Heading 2 gets more specific\r\n\r\nNow we're
+      getting into the details."
     output: |-
       <h1>This is a Heading 1</h1>
       <p>This might be an introductory paragraph on the general topic.</p>
@@ -21,12 +16,12 @@ Block quotations:
   Block quotations:
     desc: Block quotations designate long quotations where a paragraph break is
       appropriate.  It ends with a blank line.
-    input: |-
-      Even Mr. Sedaris, a noted luddite, has finally succumbed to doing his writing on a computer.  The Internet, however, remains an idiotic trifle:
-
-      bq. I've never seen the Internet. I don't have email. I just enjoy lying on the couch and reading a magazine. When people say, "You should visit my Web page," I'm always perplexed by it. Why? What do you do there?
-
-      Haven't we all pondered that at one time or another?
+    input: "Even Mr. Sedaris, a noted luddite, has finally succumbed to doing
+      his writing on a computer.  The Internet, however, remains an idiotic trifle:\r\n\r\nbq.
+      I've never seen the Internet. I don't have email. I just enjoy lying on the
+      couch and reading a magazine. When people say, \"You should visit my Web page,\"
+      I'm always perplexed by it. Why? What do you do there?\r\n\r\nHaven't we all
+      pondered that at one time or another?"
     output: |-
       <p>Even Mr. Sedaris, a noted luddite, has finally succumbed to doing his writing on a computer.  The Internet, however, remains an idiotic trifle:</p>
       <blockquote>
@@ -36,10 +31,9 @@ Block quotations:
   Citing block quotations:
     desc: Block quotations may include a citation URL(Uniform Resource Locator)
       immediately following the period.
-    input: |-
-      A standard Lorem Ipsum passage has been used since the 1500s:
-
-      bq.:http://www.lipsum.com/ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    input: "A standard Lorem Ipsum passage has been used since the 1500s:\r\n\r\nbq.:http://www.lipsum.com/
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua."
     output: |-
       <p>A standard Lorem Ipsum passage has been used since the 1500s:</p>
       <blockquote cite="http://www.lipsum.com/">
@@ -49,12 +43,8 @@ Block quotations:
     desc: If your block quotation needs to go on for more than one paragraph, use
       two periods.  The block quotation ends when a paragraph of a different type
       (such as an explicit paragraph or a header) is encountered.
-    input: |-
-      bq.. This is one paragraph.
-
-      Another paragraph, also part of the quote.
-
-      p. A normal paragraph ends the quote.
+    input: "bq.. This is one paragraph.\r\n\r\nAnother paragraph, also part of
+      the quote.\r\n\r\np. A normal paragraph ends the quote."
     output: |-
       <blockquote>
       <p>This is one paragraph.</p>
@@ -65,16 +55,11 @@ Bullet lists:
   Bullet lists:
     desc: Make a bullet list with asterisks.  Use more asterisks to make nested
       lists.
-    input: |-
-      Textile has several advantages over HTML:
-
-      * It's easier on the eyes
-      * You don't have to write all those HTML tags
-      ** By not writing the tags yourself, you're less likely to make coding mistakes
-      ** It requires fewer keystrokes
-      *** You don't wear out the keys on your keyboard as fast
-      *** You won't wear out your fingers as fast
-      * You can write it much quicker
+    input: "Textile has several advantages over HTML:\r\n\r\n* It's easier on
+      the eyes\r\n* You don't have to write all those HTML tags\r\n** By not writing
+      the tags yourself, you're less likely to make coding mistakes\r\n** It requires
+      fewer keystrokes\r\n*** You don't wear out the keys on your keyboard as fast\r\n***
+      You won't wear out your fingers as fast\r\n* You can write it much quicker"
     output: "<p>Textile has several advantages over <span class=\"caps\">HTML</span>:</p>\n<ul>\n\t<li>It&#8217;s
       easier on the eyes</li>\n\t<li>You don&#8217;t have to write all those <span
       class=\"caps\">HTML</span> tags\n\t<ul>\n\t\t<li>By not writing the tags yourself,
@@ -86,16 +71,10 @@ Numbered lists:
   Numbered lists:
     desc: Start each item in your numbered list with a number sign.  For nested
       lists, use more number signs.
-    input: |-
-      How to make a PB&J:
-
-      # Gather bread, peanut butter, and jelly
-      # Slice the bread if necessary
-      # Assemble the sandwich
-      ## Spread peanut butter on one slice of bread
-      ## Put jelly on another slice
-      ## Put the two slices together
-      # Enjoy
+    input: "How to make a PB&J:\r\n\r\n# Gather bread, peanut butter, and jelly\r\n#
+      Slice the bread if necessary\r\n# Assemble the sandwich\r\n## Spread peanut
+      butter on one slice of bread\r\n## Put jelly on another slice\r\n## Put the
+      two slices together\r\n# Enjoy"
     output: "<p>How to make a PB&amp;J:</p>\n<ol>\n\t<li>Gather bread, peanut
       butter, and jelly</li>\n\t<li>Slice the bread if necessary</li>\n\t<li>Assemble
       the sandwich\n\t<ol>\n\t\t<li>Spread peanut butter on one slice of bread</li>\n\t\t<li>Put
@@ -103,14 +82,9 @@ Numbered lists:
 Mixed nested lists:
   Mixed nested lists:
     desc: You can nest ordered lists inside unordered lists and vice-versa.
-    input: |-
-      Three reasons to walk to work:
-
-      # It saves fuel
-      # It's good for your health
-      ** Walking burns calories
-      ** Time outside means lower stress
-      # It's good for the environment
+    input: "Three reasons to walk to work:\r\n\r\n# It saves fuel\r\n# It's good
+      for your health\r\n** Walking burns calories\r\n** Time outside means lower
+      stress\r\n# It's good for the environment"
     output: "<p>Three reasons to walk to work:</p>\n<ol>\n\t<li>It saves fuel</li>\n\t<li>It&#8217;s
       good for your health\n\t<ul>\n\t\t<li>Walking burns calories</li>\n\t\t<li>Time
       outside means lower stress</li>\n\t</ul></li>\n\t<li>It&#8217;s good for the
@@ -120,13 +94,9 @@ Definition lists:
     desc: Each term in a definition list starts with a dash.  Put a @:=@ between
       the term and the definition.  If your definition spans multiple lines, end
       the definition with @=:@
-    input: |-
-      - coffee := Hot and black
-      - tea := Also hot, but a little less black
-      - milk :=
-      Nourishing beverage for baby cows.
-
-      Cold drink that goes great with cookies. =:
+    input: "- coffee := Hot and black\r\n- tea := Also hot, but a little less
+      black\r\n- milk :=\r\nNourishing beverage for baby cows.\r\n\r\nCold drink
+      that goes great with cookies. =:"
     output: "<dl>\n\t<dt>coffee</dt>\n\t<dd>Hot and black</dd>\n\t<dt>tea</dt>\n\t<dd>Also
       hot, but a little less black</dd>\n\t<dt>milk</dt>\n\t<dd><p>Nourishing beverage
       for baby cows.</p>\n<p>Cold drink that goes great with cookies.</p></dd>\n</dl>"
@@ -134,10 +104,8 @@ Footnotes:
   Footnotes:
     desc: To reference a footnote, place the footnote number in square brackets.
       Don't forget the corresponding footnote at the bottom of the page.
-    input: |-
-      42.7% of all statistics are made up on the spot.[1]
-
-      fn1. "Dr. Katz":http://en.wikiquote.org/wiki/Steven_Wright
+    input: "42.7% of all statistics are made up on the spot.[1]\r\n\r\nfn1. \"Dr.
+      Katz\":http://en.wikiquote.org/wiki/Steven_Wright"
     output: |-
       <p>42.7% of all statistics are made up on the spot.<sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup></p>
       <p class="footnote" id="fn1"><a href="#fnr1"><sup>1</sup></a> <a href="http://en.wikiquote.org/wiki/Steven_Wright">Dr. Katz</a></p>
@@ -145,18 +113,15 @@ Tables:
   Tables:
     desc: Simple tables are made by separating each cell with vertical pipes.  Begin
       the cell with @_.@ to indicate the cell is a heading.
-    input: |-
-      |_. name|_. age|
-      |Walter|5|
-      |Florence|6|
+    input: "|_. name|_. age|\r\n|Walter|5|\r\n|Florence|6|"
     output: "<table>\n\t<tr>\n\t\t<th>name</th>\n\t\t<th>age</th>\n\t</tr>\n\t<tr>\n\t\t<td>Walter</td>\n\t\t<td>5</td>\n\t</tr>\n\t<tr>\n\t\t<td>Florence</td>\n\t\t<td>6</td>\n\t</tr>\n</table>"
   Table cell attributes:
     desc: You can make a table cell span rows or columns with a slash or backslash
       and the number to span.  Classes, IDs, style, and alignment are also possible
       on table cells as with other elements.
-    input: "|{background:#ddd}. Cell with background|Normal|\n|\x02. Cell spanning
-      2 columns|\n|/2. Cell spanning 2 rows|one|\n|two|\n|>. Right-aligned cell|<.
-      Left-aligned cell|"
+    input: "|{background:#ddd}. Cell with background|Normal|\r\n|\\2. Cell spanning
+      2 columns|\r\n|/2. Cell spanning 2 rows|one|\r\n|two|\r\n|>. Right-aligned
+      cell|<. Left-aligned cell|"
     output: "<table>\n\t<tr>\n\t\t<td style=\"background:#ddd;\">Cell with background</td>\n\t\t<td>Normal</td>\n\t</tr>\n\t<tr>\n\t\t<td
       colspan=\"2\">Cell spanning 2 columns</td>\n\t</tr>\n\t<tr>\n\t\t<td rowspan=\"2\">Cell
       spanning 2 rows</td>\n\t\t<td>one</td>\n\t</tr>\n\t<tr>\n\t\t<td>two</td>\n\t</tr>\n\t<tr>\n\t\t<td
@@ -165,10 +130,7 @@ Tables:
   Table attributes:
     desc: 'To apply attributes to the entire table, use the @table.@ signature
       on a line by itself before the table data. '
-    input: |-
-      table(#prices).
-      |Adults|$5|
-      |Children|$2|
+    input: "table(#prices).\r\n|Adults|$5|\r\n|Children|$2|"
     output: "<table id=\"prices\">\n\t<tr>\n\t\t<td>Adults</td>\n\t\t<td>$5</td>\n\t</tr>\n\t<tr>\n\t\t<td>Children</td>\n\t\t<td>$2</td>\n\t</tr>\n</table>"
 Divisions:
   Divisions:
