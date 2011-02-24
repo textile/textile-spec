@@ -1,7 +1,7 @@
 HTML spans:
   HTML spans:
     desc: You can enclose a bit of text in an HTML span tag by enclosing it in percent
-      signs.  Then you can apply attributes to the span (see "attributes":/textile/attributes).
+      signs.  Then you can apply attributes to the span (see "attributes":../attributes).
     input: I can put in a %(myclass)span with a class% like this.
     output: <p>I can put in a <span class="myclass">span with a class</span> like
       this.</p>
