@@ -92,16 +92,16 @@ Links:
     desc: If you link to a URL repeatedly, you can replace the URL with a link alias
       defined elsewhere in the Textile document.
     input: |-
-      I'm really excited about "RedCloth":redcloth.  I love it so much, I think I'll name my first child "RedCloth":redcloth.
+      I'm really excited about "Textile":textileit.  I love it so much, I think I'll name my first child "Tex":textileit.
 
-      [redcloth]http://redcloth.org
-    output: <p>I&#8217;m really excited about <a href="http://redcloth.org">RedCloth</a>.  I
-      love it so much, I think I&#8217;ll name my first child <a href="http://redcloth.org">RedCloth</a>.</p>
+      [textileit]http://textileit.com
+    output: <p>I&#8217;m really excited about <a href="http://textileit.com">Textile</a>.  I
+      love it so much, I think I&#8217;ll name my first child <a href="http://textileit.com">Textile</a>.</p>
   Link attributes:
     desc: Link "attributes":../attributes can be specified at the beginning of the
       link text followed by a period and space.
-    input: '"(my-class). This is a link with class":http://redcloth.org'
-    output: <p><a href="http://redcloth.org" class="my-class">This is a link with
+    input: '"(my-class). This is a link with class":http://textileit.com'
+    output: <p><a href="http://textileit.com" class="my-class">This is a link with
       class</a></p>
 Images:
   Images:

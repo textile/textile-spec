@@ -93,7 +93,7 @@ Dimension sign:
     input: 4 x 4 = 16
     output: <p>4 &#215; 4 = 16</p>
   Dimension with quotes:
-    desc: In RedCloth, quotes may be applied to the dimensions to represent feet
+    desc: In Textile, quotes may be applied to the dimensions to represent feet
       and inches.
     input: |-
       My office measures 5' x 5'6".

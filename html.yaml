@@ -8,8 +8,8 @@ HTML spans:
 Inline code:
   Inline code:
     desc: To mark code in your text, surround the code with at signs.
-    input: On the command line, you can just type @redcloth@.
-    output: <p>On the command line, you can just type <code>redcloth</code>.</p>
+    input: On the command line, you can just type @bash@.
+    output: <p>On the command line, you can just type <code>bash</code>.</p>
 Block code:
   Block code:
     desc: You can insert a block of code with the @bc.@ block signature.
@@ -51,7 +51,7 @@ Inline HTML:
     output: <p>I can use <span class="caps">HTML</span> directly in my <span class="youbetcha">Textile</span>.</p>
 Block HTML:
   Block HTML:
-    desc: You can use HTML freely within your RedCloth 4 Textile.  HTML tags on
+    desc: You can use HTML freely within your Textile.  HTML tags on
       a line by themselves will not be mangled.  Don't forget to leave a blank line
       after any Textile, just like usual.
     input: |-
@@ -71,7 +71,7 @@ Block HTML:
       type=\"submit\" value=\"Check Out\" /></p>\n</form>\n</div>"
 No Textile:
   No Textile:
-    desc: You can have RedCloth skip a chunk of text with the @<notextile>@ tag
+    desc: You can have Textile skip a chunk of text with the @<notextile>@ tag
       or double-equals.
     input: |-
       <notextile>
