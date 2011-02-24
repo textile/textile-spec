@@ -51,8 +51,8 @@ Inline HTML:
     output: <p>I can use <span class="caps">HTML</span> directly in my <span class="youbetcha">Textile</span>.</p>
 Block HTML:
   Block HTML:
-    desc: You can use HTML freely within your Textile 4 Textile.  HTML tags on
-      a line by themselves will not be mangled.  Don't forget to leave a blank line
+    desc: You can use HTML freely within your Textile.  HTML tags on a line
+      by themselves will not be mangled.  Don't forget to leave a blank line
       after any Textile, just like usual.
     input: |-
       <div id="shopping-cart">

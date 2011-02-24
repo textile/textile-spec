@@ -94,7 +94,7 @@ Links:
       I'm really excited about "Textile":textile.  I love it so much, I think I'll name my first child "Tex":textile.
       
       [textile]http://textileit.com
-    output: <p>I&#8217;m really excited about <a href="http://textileit.com">Textile</a>.  I love it so much, I think I&#8217;ll name my first child <a href="http://textileit.com">Textile</a>.</p>
+    output: <p>I&#8217;m really excited about <a href="http://textileit.com">Textile</a>.  I love it so much, I think I&#8217;ll name my first child <a href="http://textileit.com">Tex</a>.</p>
   Link attributes:
     desc: Link "attributes":../attributes can be specified at the beginning of the
       link text followed by a period and space.

@@ -35,12 +35,12 @@ Alignment:
       
       p=. centered
       
-      p<>. justified justified justified justified justified justified justified justified justified
+      p<>. justified justified justified justified justified justified justified justified justified justified justified justified justified justified justified justified justified justified
     output: |-
       <p style="text-align:left;">align left</p>
       <p style="text-align:right;">align right</p>
       <p style="text-align:center;">centered</p>
-      <p style="text-align:justify;">justified justified justified justified justified justified justified justified justified</p>
+      <p style="text-align:justify;">justified justified justified justified justified justified justified justified justified justified justified justified justified justified justified justified justified justified</p>
 Indentation:
   Indentation:
     desc: Text can be indented with single parentheses.  For each left paren, left
